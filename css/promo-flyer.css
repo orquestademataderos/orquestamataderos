@@ -1,0 +1,42 @@
+
+/* Estética inspirada en el flyer: negro pleno, tipografía blanca, jerarquías marcadas */
+:root{
+  --black:#000;
+  --dark:#0B0B0B;
+  --gray:#BDBDBD;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#111;color:#fff}
+.bg-black{background:#000 !important}
+
+/* HERO */
+.hero{background:#111;padding:2.5rem 0 2rem;border-bottom:1px solid #2b2b2b}
+.title{font-weight:800; letter-spacing:.5px; color:#fff; line-height:1.05; margin:0}
+.subtitle{font-weight:700; color:#E5E5E5; letter-spacing:.08em; font-size:1rem; margin-top:.25rem}
+.guests .label{color:#E5E5E5}
+.guest{font-weight:700; color:#fff; letter-spacing:.04em}
+.guest-note{color:#CFCFCF}
+
+/* date/time chips */
+.date-pill{display:inline-block; padding:.35rem .6rem; border:1px solid #555; border-radius:.35rem; background:#111}
+.time{opacity:.9}
+
+/* photo */
+.flyer-photo{height:260px; background:#000}
+.object-fit-cover{object-fit:cover}
+
+/* info / venue */
+.info{background:#111}
+
+/* buttons */
+.btn-outline-light{border-color:#bbb; color:#fff}
+.btn-outline-light:hover{background:#fff;color:#000}
+
+/* links */
+a{color:#fff}
+a:hover{opacity:.9}
+
+/* utilities */
+.rounded-1{border-radius:.35rem}
+.border-secondary{border-color:#2b2b2b !important}

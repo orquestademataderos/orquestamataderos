@@ -1,0 +1,174 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0E1B4D; /* Azul oscuro del catálogo */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0E1B4D !important;
+    border-bottom: 3px solid #C8102E; /* Rojo del catálogo */
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #C8102E;
+    color: white !important;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #0E1B4D, #1A254F);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+    color: #C0C0C0;
+}
+
+.hero .btn {
+    background-color: #C8102E;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #A60D25;
+}
+
+/* Sección de Productos */
+.productos-destacados {
+    background-color: #FFFFFF;
+    color: #0E1B4D;
+    padding: 60px 0;
+}
+
+.productos-destacados h2 {
+    color: #0E1B4D;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    border: 2px solid #C8102E;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0E1B4D;
+}
+
+.card-text {
+    color: #333;
+}
+
+.btn-secondary {
+    background-color: #C8102E;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #A60D25;
+}
+
+/* Contacto */
+.contacto {
+    background-color: #1A254F;
+    padding: 60px 0;
+    color: white;
+}
+
+.contacto h2 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.contacto a {
+    color: #C8102E;
+    font-weight: bold;
+}
+
+.contacto .form-control {
+    background-color: #FFFFFF;
+    border: 2px solid #C8102E;
+    border-radius: 5px;
+    color: #0E1B4D;
+}
+
+/* Footer */
+footer {
+    background-color: #0E1B4D;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #C8102E;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .productos-destacados h2 {
+        font-size: 28px;
+    }
+
+    .contacto h2 {
+        font-size: 28px;
+    }
+}
