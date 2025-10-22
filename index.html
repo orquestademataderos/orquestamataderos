@@ -1,393 +1,252 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Concierto en Mataderos • Orquesta Infanto Juvenil</title>
-  <meta name="theme-color" content="#12B886">
-
-  <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo WebXR Supermercado + Voz (A‑Frame)</title>
+  <!-- A‑Frame CDN -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <!-- A‑Frame Extras opcional (teleport + helpers). Descomentar si deseas.
+  <script src="https://unpkg.com/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script> -->
   <style>
-    :root{ --green:#12B886; --green-700:#0E8F67; --black:#111; --white:#fff; }
-    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fff;color:#222;}
-    /* Navbar */
-    .navbar{background:var(--black);}
-    .navbar-brand,.nav-link{color:#fff !important;}
-    .nav-link:hover{color:var(--green) !important;}
-
-    /* HERO */
-    .hero{ position:relative; min-height:72vh;
-           background:url('img/banner-bg.jpg') center/cover no-repeat fixed;
-           display:flex; align-items:center; justify-content:center; text-align:center; }
-    .hero::before{content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.35));}
-    .hero .content{position:relative; z-index:2; color:#fff;}
-    .date-stack{
-      display:inline-block; line-height:1; margin-bottom:.6rem; padding:.35rem .8rem;
-      background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.25); border-radius:.5rem;
+    /* UI HTML superpuesta (overlay) */
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+    #ui {
+      position: fixed; inset: 12px auto auto 12px; z-index: 9999;
+      background: rgba(0,0,0,.55); color: #fff; padding: 12px 14px; border-radius: 10px;
+      width: min(420px, 92vw); box-shadow: 0 6px 24px rgba(0,0,0,.25);
+      backdrop-filter: blur(6px);
     }
-    .date-big{font-weight:800; font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing: .5px;}
-    .time-big{font-weight:700; font-size: clamp(1.1rem, 2.5vw, 1.6rem); opacity:.95}
-    .hero h1{font-weight:800; letter-spacing:.04em}
-    .hero .sub{opacity:.95}
-
-    /* Botones / secciones */
-    .btn-brand{background:var(--green);color:#fff;border:0;}
-    .btn-brand:hover{background:var(--green-700);color:#fff;}
-    .section-muted{background:#F4F6F5;}
-    .footer{background:var(--black);color:#fff;}
-    .lead-claim{font-weight:600;}
-
-    /* Tarjetas compactas */
-    .card-flat{background:#fff; border:1px solid #eee; border-radius:.6rem; padding:1.25rem;}
-    .artist-chip{display:inline-block; background:#111; color:#fff; border-radius:.35rem; padding:.25rem .5rem; font-size:.85rem; margin-right:.35rem}
-    .artist-note{color:#666; font-size:.95rem}
-
-    /* Imagen historia distinta relación de aspecto */
-    .history-photo{aspect-ratio: 4 / 3; object-fit: cover; width:100%; border-radius:.6rem;}
-
-    /* ——— Invitación + artistas (callout parejo) ——— */
-    .artist-card{
-      background:#FAFAFA; border:1px solid #EEE; border-radius:.6rem;
-      padding:1rem 1.25rem; margin-top:1rem;
+    #ui h1 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+    #ui .small { opacity: .85; font-size: 12px; line-height: 1.4; }
+    #ui button {
+      appearance: none; border: 0; border-radius: 10px; padding: 10px 14px;
+      background: #6b8afd; color: #fff; font-weight: 600; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(107,138,253,.35);
     }
-    .artist-item{display:flex;gap:.6rem;align-items:flex-start;margin:.35rem 0}
+    #ui button[disabled] { opacity:.5; cursor: not-allowed; }
+    #log {
+      margin-top: 8px; background: rgba(255,255,255,.08); padding: 8px 10px; border-radius: 8px; min-height: 62px;
+      font-size: 13px; white-space: pre-wrap;
+    }
+    #help { margin-top: 8px; font-size: 12px; opacity: .9; }
+    #toast { position: fixed; right: 12px; bottom: 12px; z-index: 9999; background: rgba(0,0,0,.75); color:#fff; padding:10px 12px; border-radius: 10px; display:none; }
   </style>
-
-  <!-- Open Graph / Twitter -->
-  <link rel="canonical" href="https://falbohernan.github.io/orquesta-mataderos/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Voces del barrio • Orquesta Infanto Juvenil de Mataderos">
-  <meta property="og:description" content="30/10 – 16:45 • Cine Teatro El Plata • Entrada libre y gratuita">
-  <meta property="og:url" content="https://falbohernan.github.io/orquesta-mataderos/">
-  <meta property="og:image" content="https://falbohernan.github.io/orquesta-mataderos/img/social.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Voces del barrio • Orquesta Mataderos">
-  <meta name="twitter:description" content="30/10 – 16:45 • Cine Teatro El Plata • Entrada libre y gratuita">
-  <meta name="twitter:image" content="https://falbohernan.github.io/orquesta-mataderos/img/social.jpg">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Orquesta Mataderos</a>
-  </div>
-</nav>
-
-<!-- HERO con fecha/hora grandes y copy breve + invitadas + tributo -->
-<header class="hero">
-  <div class="content container">
-    <div class="date-stack">
-      <div class="date-big">30-10</div>
-      <div class="time-big">16:45 HS</div>
+  <!-- Overlay de control de voz -->
+  <div id="ui">
+    <h1>🛒 Demo Supermercado + Voz</h1>
+    <div class="small">Di frases como: <b>“Hola”</b>, <b>“Quiero 3 manzanas”</b>, <b>“¿Cuánto sale?”</b>, <b>“Pagar con tarjeta”</b>, <b>“Gracias”</b>. Idioma: <code>es-AR</code>.</div>
+    <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+      <button id="btnStart">🎙️ Iniciar micrófono</button>
+      <button id="btnStop" disabled>⏹️ Detener</button>
+      <button id="btnRepeat">🔊 Repetir última respuesta</button>
     </div>
-    <h1 class="display-5 fw-bold text-uppercase">VOCES DEL BARRIO</h1>
-
-    <p class="sub mb-2">
-      Orquesta Infantil y Juvenil de Mataderos · Cine Teatro El Plata · Entrada libre y gratuita
-    </p>
-
-    <!-- Badges proporcionales con invitadas y tributo -->
-    <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-      <span class="badge bg-dark bg-opacity-75 border border-light-subtle fw-semibold">
-        Invitadas: María Ezquiaga · Celeste Ferreyra
-      </span>
-      <span class="badge bg-success fw-semibold">
-        Tributo a Gabo Ferro
-      </span>
-    </div>
-
-    <a href="#entradas" class="btn btn-brand btn-lg">Quiero estar ahí</a>
-  </div>
-</header>
-
-<main>
-  <!-- Invitación + rol de la orquesta + artistas (sección unificada) -->
-  <section class="container py-5">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6">
-        <h2 class="h3 fw-bold">La orquesta del barrio</h2>
-
-        <!-- Enfoque en el concierto y breve mención al programa -->
-        <p>
-          El jueves 30 nos encontramos para un <strong>concierto abierto</strong> de la Orquesta Infantil y Juvenil de Mataderos,
-          parte del <strong>Programa de Orquestas Infantiles y Juveniles de la Ciudad</strong>. Será una presentación pensada
-          para disfrutar en familia, con repertorio que abraza nuestra identidad barrial.
-        </p>
-
-        <!-- Detalle de la experiencia del show -->
-        <p>
-          El programa incluye un <strong>tributo a Gabo Ferro</strong> y obras que ponen en primer plano el trabajo en equipo,
-          la emoción y la energía de nuestras cuerdas, vientos y percusión. La propuesta dura alrededor de una hora y busca
-          que <strong>todo el teatro cante y acompañe</strong>, bien al estilo de Mataderos.
-        </p>
-
-        <!-- Invitación explícita a llenar el teatro -->
-        <p class="mb-0">
-          Sumate con tu familia, amigos y vecinos: el <strong>Cine Teatro El Plata</strong> tiene
-          <strong>más de 400 butacas</strong>. <strong>¡Llenémoslo!</strong>. <strong>Entrada libre y gratuita.</strong>
-        </p>
-
-        <!-- Artistas dentro de la misma sección (callout compacto, parejo con el texto) -->
-        <div class="artist-card">
-          <div class="mb-2">
-            <span class="artist-chip">Artistas invitadas</span>
-          </div>
-
-          <div class="artist-item">
-            <div>🎤</div>
-            <div>
-              <b>María Ezquiaga</b>
-              <span class="artist-note">— canciones en homenaje a Gabo Ferro.</span><br>
-              Canciones sensibles y potentes para celebrar a un referente querido del barrio de Mataderos.
-            </div>
-          </div>
-
-          <div class="artist-item">
-            <div>📖</div>
-            <div>
-              <b>Celeste Ferreyra</b>
-              <span class="artist-note">— lectura de poesía.</span><br>
-              Textos que cruzan territorio, identidad y comunidad, en diálogo con la orquesta.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ⚠️ VIDEO LOCAL: reemplaza cualquier iframe previo -->
-      <div class="col-lg-6">
-        <div class="ratio ratio-16x9 rounded shadow">
-          <video
-            src="assets/video/concierto1.mp4"
-            controls
-            playsinline
-            preload="metadata"
-            style="width:100%;height:100%;object-fit:cover;border-radius:.375rem;">
-            Tu navegador no puede reproducir el video.
-            Podés verlo en <a href="assets/video/concierto1.mp4">este enlace directo</a>.
-          </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Datos + QR + compartir -->
-  <section id="entradas" class="section-muted py-5">
-    <div class="container">
-      <div class="row g-4">
-        <!-- Datos + MAPS -->
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h3 class="h5 fw-bold mb-3">Datos del concierto</h3>
-            <ul class="list-unstyled mb-3">
-              <li>📍 <strong>Mataderos, CABA</strong> — Cine Teatro El Plata</li>
-              <li>🗓️ <strong>30 de octubre</strong></li>
-              <li>🕓 <strong>16:45 hs</strong></li>
-              <li>🎟️ Entrada libre y gratuita</li>
-            </ul>
-
-            <!-- Mapa embebido -->
-            <div class="ratio ratio-4x3 rounded overflow-hidden border">
-              <iframe
-                title="Ubicación Cine Teatro El Plata"
-                src="https://www.google.com/maps?q=Cine+Teatro+El+Plata,+Mataderos&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                style="border:0;"></iframe>
-            </div>
-            <div class="mt-2">
-              <a class="small text-decoration-none" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Cine+Teatro+El+Plata+Mataderos">
-                Abrir en Google Maps ↗
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- QR + botones (ajustado para equilibrar con el mapa) -->
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center text-center">
-            <p class="mb-3 h6">Compartí el evento con este QR</p>
-
-            <!-- QR grande y responsivo -->
-            <div class="rounded border p-3 mb-3" style="width:clamp(220px, 32vw, 320px);">
-              <img
-                id="qrImg2"
-                src="https://quickchart.io/qr?text=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F&size=300"
-                srcset="https://quickchart.io/qr?text=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F&size=600 2x"
-                alt="QR Concierto Orquesta Mataderos"
-                style="width:100%; aspect-ratio:1/1; height:auto;" loading="lazy">
-            </div>
-
-            <!-- Enlaces de compartir -->
-            <div class="w-100" style="max-width:560px;">
-              <div class="d-grid gap-2" style="grid-template-columns:repeat(2,1fr); display:grid;">
-                <button class="btn btn-dark btn-sm" id="btnShare2">Compartir desde el cel</button>
-                <button class="btn btn-outline-dark btn-sm" id="btnCopy2">Copiar link</button>
-              </div>
-
-              <div class="d-grid gap-2 mt-2" style="grid-template-columns:repeat(4,1fr); display:grid;">
-                <a class="btn btn-success btn-sm" id="btnWA2" target="_blank" rel="noopener">WhatsApp</a>
-                <a class="btn btn-primary btn-sm" id="btnTG2" target="_blank" rel="noopener" style="background:#27A7E7;border-color:#27A7E7">Telegram</a>
-                <a class="btn btn-outline-primary btn-sm" id="btnFB2" target="_blank" rel="noopener">Facebook</a>
-                <a class="btn btn-outline-dark btn-sm" id="btnX2"  target="_blank" rel="noopener">X</a>
-              </div>
-
-              <div class="d-grid mt-2">
-                <a class="btn btn-outline-secondary btn-sm" id="btnDL2" download="orquesta-mataderos-qr.png">
-                  Descargar QR
-                </a>
-              </div>
-
-              <div id="shareMsg2" class="small mt-2" style="display:none;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Script local de la sección para fijar la nueva URL y acciones -->
-    <script>
-      (function(){
-        const url   = 'https://orquestademataderos.github.io/orquestamataderos/';
-        const text  = 'Concierto "Voces del barrio" • Orquesta Infanto Juvenil de Mataderos • 30/10 – 16:45 • Cine Teatro El Plata';
-        const title = 'Voces del barrio • Orquesta Mataderos';
-
-        const encUrl  = encodeURIComponent(url);
-        const encText = encodeURIComponent(text);
-
-        document.getElementById('btnWA2').href = `https://wa.me/?text=${encText}%20${encUrl}`;
-        document.getElementById('btnTG2').href = `https://t.me/share/url?url=${encUrl}&text=${encText}`;
-        document.getElementById('btnFB2').href = `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`;
-        document.getElementById('btnX2').href  = `https://twitter.com/intent/tweet?url=${encUrl}&text=${encText}`;
-        document.getElementById('btnDL2').href = `https://quickchart.io/qr?text=${encUrl}&size=1024`;
-
-        const msg = document.getElementById('shareMsg2');
-        document.getElementById('btnShare2').addEventListener('click', async () => {
-          if (navigator.share) {
-            try { await navigator.share({ title, text, url }); }
-            catch(e){ msg.textContent='No se pudo compartir. Probá otra opción.'; msg.style.display='block'; }
-          } else {
-            msg.textContent='Tu navegador no soporta compartir directo. Usá WhatsApp/Telegram o copiá el link.';
-            msg.style.display='block';
-          }
-        });
-
-        document.getElementById('btnCopy2').addEventListener('click', async () => {
-          try { await navigator.clipboard.writeText(url);
-            msg.textContent='Link copiado. ¡Pegalo donde quieras!'; msg.style.display='block';
-          } catch(e){
-            const tmp = document.createElement('input'); tmp.value = url;
-            document.body.appendChild(tmp); tmp.select(); document.execCommand('copy'); tmp.remove();
-            msg.textContent='Link copiado (método alternativo).'; msg.style.display='block';
-          }
-        });
-      })();
-    </script>
-  </section>
-
-  <!-- Historia (relación de aspecto distinta) -->
-  <section class="container pb-5">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6">
-        <img src="img/f2.jpg" class="history-photo shadow-sm" alt="La orquesta en el barrio">
-      </div>
-      <div class="col-lg-6">
-        <h2 class="h4 fw-bold">Un poco de historia</h2>
-
-        <!-- Origen y programa -->
-        <p>
-          La Orquesta Infantil y Juvenil de Mataderos forma parte del
-          <strong>Programa de Orquestas Infantiles y Juveniles de la Ciudad</strong>,
-          una política pública con <strong>más de 25 años</strong> acercando
-          formación musical gratuita, instrumentos, ensayos y escenarios a niñas, niños y jóvenes.
-        </p>
-
-        <!-- Rol en el barrio y en la escuela -->
-        <p>
-          En nuestro barrio ensayamos en la <strong>Escuela Nº 19 D.E. 20</strong>, donde la orquesta
-          es un punto de encuentro entre escuela, familias y vecinos. La práctica orquestal fortalece
-          la trayectoria escolar, el trabajo en equipo, la escucha y el orgullo de pertenecer a
-          <em>Mataderos</em>.
-        </p>
-
-        <!-- Organización comunitaria e invitación a sumarse -->
-        <p>
-          Somos una construcción <strong>comunitaria</strong>: profes, chicos y chicas, familias,
-          cooperadora y vecinos empujamos para que la música siga abriendo puertas. 
-          Si querés que tu hija, hijo o alguien cercano se sume, <strong>contactanos por las redes</strong>
-          que figuran en el pie de página — te orientamos con días, horarios y requisitos.
-        </p>
-
-        <!-- Cierre amable + llamado -->
-        <p class="mb-0">
-          Gracias por acompañar y difundir. <strong>Sumate, corré la voz y llenemos el teatro</strong>:
-          cuando el barrio se organiza, la orquesta suena más fuerte.
-        </p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer py-4">
-  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-    <div>© Orquesta Infantil y Juvenil de Mataderos</div>
-    <div class="d-flex gap-3">
-      <a class="link-light text-decoration-none" href="https://www.instagram.com/orquestamataderos/">Instagram</a>
-      <a class="link-light text-decoration-none" href="https://www.youtube.com/watch?time_continue=32&v=7aMisA3YR7M">YouTube</a>
+    <div id="log" aria-live="polite">Esperando…</div>
+    <div id="help" class="small">
+      Consejos: concedé permiso al micrófono. Si tu navegador no soporta Web Speech API, podés usar sólo TTS o escribir comandos en la consola JS (<code>window.demoHandleText("Quiero 2 manzanas")</code>).
     </div>
   </div>
-</footer>
+  <div id="toast"></div>
 
-<!-- Compartir (antiguo; puede quedarse, no afecta) -->
+  <!-- Escena A‑Frame (WebXR listo para VR). Fallback: modo escritorio/2D. -->
+  <a-scene renderer="antialias: true; colorManagement: true;" background="color: #c7e0ff">
+    <!-- Iluminación -->
+    <a-entity light="type: ambient; intensity: 0.55"></a-entity>
+    <a-entity light="type: directional; intensity: 0.85" position="2 5 -2"></a-entity>
+
+    <!-- Piso -->
+    <a-plane position="0 0 0" rotation="-90 0 0" width="30" height="30" color="#dcdcdc"></a-plane>
+
+    <!-- Paredes simples -->
+    <a-box position="0 2 -10" depth="0.2" height="4" width="20" color="#f4f4f4"></a-box>
+    <a-box position="-10 2 0" depth="20" height="4" width="0.2" color="#f0f0f0"></a-box>
+    <a-box position="10 2 0" depth="20" height="4" width="0.2" color="#f0f0f0"></a-box>
+
+    <!-- Góndola / estantería -->
+    <a-box position="-2 1 -4" depth="1" height="2" width="4" color="#8d8d8d"></a-box>
+    <a-box position="-2 1.5 -4" depth="0.9" height="0.1" width="3.8" color="#bdbdbd"></a-box>
+    <a-box position="-2 1.0 -4" depth="0.9" height="0.1" width="3.8" color="#bdbdbd"></a-box>
+    <a-box position="-2 0.5 -4" depth="0.9" height="0.1" width="3.8" color="#bdbdbd"></a-box>
+
+    <!-- Productos: Manzanas (rojas) -->
+    <a-sphere class="producto manzana" position="-3 1.12 -3.7" radius="0.12" color="#c0392b"></a-sphere>
+    <a-sphere class="producto manzana" position="-2.6 1.12 -3.7" radius="0.12" color="#c0392b"></a-sphere>
+    <a-sphere class="producto manzana" position="-2.2 1.12 -3.7" radius="0.12" color="#c0392b"></a-sphere>
+    <a-sphere class="producto manzana" position="-1.8 1.12 -3.7" radius="0.12" color="#c0392b"></a-sphere>
+    <a-entity position="-2 1.35 -3.6" text="value: Manzanas $120 c/u; color: #111; align: center; width: 2.8;"></a-entity>
+
+    <!-- Caja / cajero -->
+    <a-box position="2 0.6 -2" depth="1.2" height="0.6" width="2.2" color="#5d6d7e"></a-box>
+    <a-entity id="cajero" position="2 1 -2">
+      <!-- Cuerpo simple del cajero (avatar estilizado) -->
+      <a-cylinder position="0 0.9 0" radius="0.25" height="1.2" color="#2c3e50"></a-cylinder>
+      <a-sphere position="0 1.7 0" radius="0.22" color="#f1c40f"></a-sphere>
+      <a-entity id="textoCajero" position="0 2 0" text="value: Bienvenido/a al súper. ¿En qué te ayudo?; color: #111; align: center; width: 4.2"></a-entity>
+    </a-entity>
+
+    <!-- Cámara + cursor -->
+    <a-entity id="rig" position="0 1.6 2">
+      <a-entity camera look-controls wasd-controls>
+        <a-entity cursor="fuse: false;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015" material="color: #222; shader: flat"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <!-- Cielo ligero -->
+    <a-sky color="#c7e0ff"></a-sky>
+  </a-scene>
+
 <script>
-  const shareUrl   = 'https://falbohernan.github.io/orquesta-mataderos/';
-  const shareText  = 'Concierto "Voces del barrio" • Orquesta Infanto Juvenil de Mataderos • 30/10 – 16:45 • Cine Teatro El Plata';
-  const shareTitle = 'Voces del barrio • Orquesta Mataderos';
-</script>
-<script>
-  (function() {
-    const encUrl  = encodeURIComponent(shareUrl);
-    const encText = encodeURIComponent(shareText);
+(function(){
+  const logEl = document.getElementById('log');
+  const btnStart = document.getElementById('btnStart');
+  const btnStop = document.getElementById('btnStop');
+  const btnRepeat = document.getElementById('btnRepeat');
+  const toast = document.getElementById('toast');
+  const textoCajero = document.querySelector('#textoCajero');
 
-    const wa = document.getElementById('btnWA'); if (wa) wa.href = `https://wa.me/?text=${encText}%20${encUrl}`;
-    const tg = document.getElementById('btnTG'); if (tg) tg.href = `https://t.me/share/url?url=${encUrl}&text=${encText}`;
-    const fb = document.getElementById('btnFB'); if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`;
-    const tw = document.getElementById('btnX');  if (tw) tw.href  = `https://twitter.com/intent/tweet?url=${encUrl}&text=${encText}`;
+  let recognizer = null;
+  let listening = false;
+  let lastReply = 'Hola, ¿qué necesitás?';
 
-    const dl = document.getElementById('btnDL'); if (dl) dl.href = `https://quickchart.io/qr?text=${encUrl}&size=1024`;
+  // Estado simple de carrito
+  const state = {
+    items: {}, // { manzana: cantidad }
+    precios: { manzana: 120 },
+    total(){
+      let t = 0;
+      for (const [k,v] of Object.entries(this.items)) t += (this.precios[k]||0)*v;
+      return t;
+    }
+  };
 
-    const msg = document.getElementById('shareMsg');
-    const sh  = document.getElementById('btnShare');
-    if (sh) sh.addEventListener('click', async () => {
-      if (navigator.share) {
-        try {
-          await navigator.share({ title: shareTitle, text: shareText, url: shareUrl });
-        } catch(e) {
-          if (msg){ msg.textContent = 'No se pudo compartir. Probá otra opción.'; msg.style.display = 'block'; }
-        }
-      } else {
-        if (msg){ msg.textContent = 'Tu navegador no soporta compartir directo. Usá WhatsApp/Telegram o copiá el link.'; msg.style.display = 'block'; }
+  // Utilidad: hablar (TTS)
+  function speak(text){
+    lastReply = text;
+    try {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'es-AR';
+      u.rate = 1.0; u.pitch = 1.0; u.volume = 1.0;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    } catch(e) {
+      console.warn('TTS no disponible', e);
+    }
+    textoCajero.setAttribute('text', 'value', text);
+    pushLog('🤖 ' + text);
+  }
+
+  // UI helper
+  function pushLog(s){
+    logEl.textContent = (logEl.textContent + '\n' + s).trim();
+  }
+  function showToast(msg){
+    toast.textContent = msg; toast.style.display = 'block';
+    setTimeout(()=> toast.style.display='none', 2200);
+  }
+
+  // Parser muy simple en español (keywords)
+  function parseCommand(raw){
+    const txt = raw.toLowerCase();
+    // Saludo
+    if (/hola|buen[oa]s/.test(txt)) return {type:'greet'};
+    // Pedidos: "quiero N manzanas" o "agregar X"
+    const ped = txt.match(/(quiero|agregar|dame)\s+(\d+)\s*(manzana|manzanas)/);
+    if (ped){
+      const cant = parseInt(ped[2],10) || 1;
+      return {type:'add', item:'manzana', qty: Math.max(1, Math.min(cant, 50))};
+    }
+    if (/manzana(s)?/.test(txt) && /(agregar|sumar|llevar|poner)/.test(txt)){
+      return {type:'add', item:'manzana', qty:1};
+    }
+    // Consultas de precio
+    if (/(cu[aá]nto|precio)/.test(txt)) return {type:'price'};
+    // Pagar
+    if (/(pagar|checkout|cobrar)/.test(txt)){
+      if (/tarjeta|cr[eé]dito|d[eé]bito/.test(txt)) return {type:'pay', method:'tarjeta'};
+      if (/efectivo|cash/.test(txt)) return {type:'pay', method:'efectivo'};
+      return {type:'pay'};
+    }
+    // Gracias / despedida
+    if (/gracias|chau|ad[ií]os/.test(txt)) return {type:'bye'};
+    return {type:'unknown'};
+  }
+
+  function handleIntent(intent){
+    switch(intent.type){
+      case 'greet':
+        speak('Hola, bienvenido al supermercado. Podés pedir por voz. Por ejemplo: quiero 3 manzanas.');
+        break;
+      case 'add':{
+        const k = intent.item; const q = intent.qty || 1;
+        state.items[k] = (state.items[k]||0) + q;
+        const tot = state.total();
+        speak(`Agregué ${q} ${q>1?'manzanas':'manzana'}. Llevás ${state.items[k]} en total. Monto parcial: $${tot}. ¿Deseás algo más?`);
+        break;
       }
-    });
-    const cp = document.getElementById('btnCopy');
-    if (cp) cp.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(shareUrl);
-        if (msg){ msg.textContent = 'Link copiado. ¡Pegalo donde quieras!'; msg.style.display = 'block'; }
-      } catch(e) {
-        const tmp = document.createElement('input');
-        tmp.value = shareUrl;
-        document.body.appendChild(tmp);
-        tmp.select(); document.execCommand('copy'); tmp.remove();
-        if (msg){ msg.textContent = 'Link copiado (método alternativo).'; msg.style.display = 'block'; }
+      case 'price':{
+        const unit = state.precios.manzana;
+        speak(`Las manzanas valen $${unit} cada una. Llevás ${state.items.manzana||0}. Total parcial: $${state.total()}.`);
+        break;
       }
-    });
-  })();
+      case 'pay':{
+        const metodo = intent.method || 'tarjeta o efectivo';
+        const total = state.total();
+        if (!total) { speak('Aún no agregaste productos. Podés decir: quiero 2 manzanas.'); break; }
+        speak(`El total es $${total}. Podés pagar con ${metodo}. ¡Gracias por tu compra!`);
+        break;
+      }
+      case 'bye':
+        speak('Gracias por tu visita. ¡Hasta luego!');
+        break;
+      default:
+        speak('No entendí. Probá decir: quiero 2 manzanas, o ¿cuánto sale?, o pagar con tarjeta.');
+    }
+  }
+
+  // Manejar texto (desde STT o desde consola)
+  function handleText(text){
+    pushLog('🗣️ ' + text);
+    const intent = parseCommand(text);
+    handleIntent(intent);
+  }
+  window.demoHandleText = handleText; // para pruebas manuales
+
+  // STT: Web Speech API (Chrome/Edge). Safari móvil tiene limitaciones.
+  function initSTT(){
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { showToast('STT no soportado. Usá Chrome/Edge de escritorio.'); btnStart.disabled = true; return null; }
+    const r = new SR();
+    r.lang = 'es-AR';
+    r.interimResults = false; r.continuous = false;
+
+    r.onstart = ()=> { listening = true; btnStart.disabled = true; btnStop.disabled = false; showToast('Escuchando…'); };
+    r.onend = ()=> { listening = false; btnStart.disabled = false; btnStop.disabled = true; showToast('Listo.'); };
+    r.onerror = (e)=> { showToast('Error STT: ' + (e && e.error || 'desconocido')); };
+    r.onresult = (ev)=>{
+      const text = (ev.results[0] && ev.results[0][0] && ev.results[0][0].transcript) || '';
+      if (text) handleText(text);
+    };
+    return r;
+  }
+
+  recognizer = initSTT();
+
+  btnStart.addEventListener('click', ()=>{
+    try {
+      if (!recognizer) recognizer = initSTT();
+      recognizer && recognizer.start();
+    } catch(e){ showToast('No se pudo iniciar STT'); }
+  });
+  btnStop.addEventListener('click', ()=>{ try { recognizer && recognizer.stop(); } catch(_){} });
+  btnRepeat.addEventListener('click', ()=> speak(lastReply));
+
+  // Bienvenida por voz al cargar
+  setTimeout(()=> speak('Bienvenido. Decí: Hola, o Quiero 2 manzanas.'), 600);
+})();
 </script>
 </body>
 </html>
+
 
