@@ -166,84 +166,125 @@
   </section>
 
 
-     <!-- Datos + QR + compartir -->
-  <section id="entradas" class="section-muted py-5">
-    <div class="container">
-      <div class="row g-4">
-        <!-- Datos + MAPS -->
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h3 class="h5 fw-bold mb-3">Datos del concierto</h3>
-            <ul class="list-unstyled mb-3">
-              <li>📍 <strong>Mataderos, CABA</strong> — Cine Teatro El Plata</li>
-              <li>🗓️ <strong>30 de octubre</strong></li>
-              <li>🕓 <strong>16:45 hs</strong></li>
-              <li>🎟️ Entrada libre y gratuita</li>
-            </ul>
+      <!-- Datos + QR + compartir -->
+<section id="entradas" class="section-muted py-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Datos + MAPS -->
+      <div class="col-md-6">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h3 class="h5 fw-bold mb-3">Datos del concierto</h3>
+          <ul class="list-unstyled mb-3">
+            <li>📍 <strong>Mataderos, CABA</strong> — Cine Teatro El Plata</li>
+            <li>🗓️ <strong>30 de octubre</strong></li>
+            <li>🕓 <strong>16:45 hs</strong></li>
+            <li>🎟️ Entrada libre y gratuita</li>
+          </ul>
 
-            <!-- Mapa embebido -->
-            <div class="ratio ratio-4x3 rounded overflow-hidden border">
-              <iframe
-                title="Ubicación Cine Teatro El Plata"
-                src="https://www.google.com/maps?q=Cine+Teatro+El+Plata,+Mataderos&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                style="border:0;"></iframe>
-            </div>
-            <div class="mt-2">
-              <a class="small text-decoration-none" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Cine+Teatro+El+Plata+Mataderos">
-                Abrir en Google Maps ↗
-              </a>
-            </div>
+          <!-- Mapa embebido -->
+          <div class="ratio ratio-4x3 rounded overflow-hidden border">
+            <iframe
+              title="Ubicación Cine Teatro El Plata"
+              src="https://www.google.com/maps?q=Cine+Teatro+El+Plata,+Mataderos&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="border:0;"></iframe>
+          </div>
+          <div class="mt-2">
+            <a class="small text-decoration-none" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&query=Cine+Teatro+El+Plata+Mataderos">
+              Abrir en Google Maps ↗
+            </a>
           </div>
         </div>
+      </div>
 
-        <!-- QR + botones (ajustado para equilibrar con el mapa) -->
-        <div class="col-md-6">
-          <div class="p-4 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center text-center">
-            <p class="mb-3 h6">Compartí el evento con este QR</p>
+      <!-- QR + botones (ajustado para equilibrar con el mapa) -->
+      <div class="col-md-6">
+        <div class="p-4 bg-white rounded shadow-sm h-100 d-flex flex-column align-items-center text-center">
+          <p class="mb-3 h6">Compartí el evento con este QR</p>
 
-            <!-- QR grande y responsivo -->
-            <div class="rounded border p-3 mb-3"
-                 style="width:clamp(220px, 32vw, 320px);">
-              <img
-                id="qrImg"
-                src="https://quickchart.io/qr?text=https%3A%2F%2Ffalbohernan.github.io%2Forquesta-mataderos%2F&size=300"
-                srcset="https://quickchart.io/qr?text=https%3A%2F%2Ffalbohernan.github.io%2Forquesta-mataderos%2F&size=600 2x"
-                alt="QR Concierto Orquesta Mataderos"
-                style="width:100%; aspect-ratio:1/1; height:auto;" loading="lazy">
+          <!-- QR grande y responsivo -->
+          <div class="rounded border p-3 mb-3" style="width:clamp(220px, 32vw, 320px);">
+            <img
+              id="qrImg2"
+              src="https://quickchart.io/qr?text=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F&size=300"
+              srcset="https://quickchart.io/qr?text=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F&size=600 2x"
+              alt="QR Concierto Orquesta Mataderos"
+              style="width:100%; aspect-ratio:1/1; height:auto;" loading="lazy">
+          </div>
+
+          <!-- Enlaces de compartir -->
+          <div class="w-100" style="max-width:560px;">
+            <div class="d-grid gap-2" style="grid-template-columns:repeat(2,1fr); display:grid;">
+              <button class="btn btn-dark btn-sm" id="btnShare2">Compartir desde el cel</button>
+              <button class="btn btn-outline-dark btn-sm" id="btnCopy2">Copiar link</button>
             </div>
 
-            <!-- Botonera en grilla para ocupar ancho y verse pareja -->
-            <div class="w-100" style="max-width:560px;">
-              <div class="d-grid gap-2 gap-md-2"
-                   style="grid-template-columns:repeat(2,1fr); display:grid;">
-                <button id="btnShare" class="btn btn-dark btn-sm">Compartir desde el cel</button>
-                <button id="btnCopy"  class="btn btn-outline-dark btn-sm">Copiar link</button>
-              </div>
-
-              <div class="d-grid gap-2 mt-2"
-                   style="grid-template-columns:repeat(4,1fr); display:grid;">
-                <a id="btnWA" class="btn btn-success btn-sm" target="_blank" rel="noopener">WhatsApp</a>
-                <a id="btnTG" class="btn btn-primary btn-sm" target="_blank" rel="noopener"
-                   style="background:#27A7E7;border-color:#27A7E7">Telegram</a>
-                <a id="btnFB" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">Facebook</a>
-                <a id="btnX"  class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener">X</a>
-              </div>
-
-              <div class="d-grid mt-2">
-                <a id="btnDL" class="btn btn-outline-secondary btn-sm" download="orquesta-mataderos-qr.png">Descargar QR</a>
-              </div>
-
-              
-              <div id="shareMsg" class="small mt-2" style="display:none;"></div>
+            <div class="d-grid gap-2 mt-2" style="grid-template-columns:repeat(4,1fr); display:grid;">
+              <a class="btn btn-success btn-sm" id="btnWA2" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-primary btn-sm" id="btnTG2" target="_blank" rel="noopener"
+                 style="background:#27A7E7;border-color:#27A7E7">Telegram</a>
+              <a class="btn btn-outline-primary btn-sm" id="btnFB2" target="_blank" rel="noopener">Facebook</a>
+              <a class="btn btn-outline-dark btn-sm" id="btnX2"  target="_blank" rel="noopener">X</a>
             </div>
+
+            <div class="d-grid mt-2">
+              <a class="btn btn-outline-secondary btn-sm" id="btnDL2" download="orquesta-mataderos-qr.png">
+                Descargar QR
+              </a>
+            </div>
+
+            <div id="shareMsg2" class="small mt-2" style="display:none;"></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Script local de la sección para fijar la nueva URL y acciones -->
+  <script>
+    (function(){
+      const url   = 'https://orquestademataderos.github.io/orquestamataderos/';
+      const text  = 'Concierto "Voces del barrio" • Orquesta Infanto Juvenil de Mataderos • 30/10 – 16:45 • Cine Teatro El Plata';
+      const title = 'Voces del barrio • Orquesta Mataderos';
+
+      // Enlaces directos
+      const encUrl  = encodeURIComponent(url);
+      const encText = encodeURIComponent(text);
+
+      document.getElementById('btnWA2').href = `https://wa.me/?text=${encText}%20${encUrl}`;
+      document.getElementById('btnTG2').href = `https://t.me/share/url?url=${encUrl}&text=${encText}`;
+      document.getElementById('btnFB2').href = `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`;
+      document.getElementById('btnX2').href  = `https://twitter.com/intent/tweet?url=${encUrl}&text=${encText}`;
+
+      // Descarga QR (alta resolución)
+      document.getElementById('btnDL2').href = `https://quickchart.io/qr?text=${encUrl}&size=1024`;
+
+      // Compartir nativo y copiar (autónomos de otros scripts)
+      const msg = document.getElementById('shareMsg2');
+      document.getElementById('btnShare2').addEventListener('click', async () => {
+        if (navigator.share) {
+          try { await navigator.share({ title, text, url }); }
+          catch(e){ msg.textContent='No se pudo compartir. Probá otra opción.'; msg.style.display='block'; }
+        } else {
+          msg.textContent='Tu navegador no soporta compartir directo. Usá WhatsApp/Telegram o copiá el link.';
+          msg.style.display='block';
+        }
+      });
+
+      document.getElementById('btnCopy2').addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(url);
+          msg.textContent='Link copiado. ¡Pegalo donde quieras!'; msg.style.display='block';
+        } catch(e){
+          const tmp = document.createElement('input'); tmp.value = url;
+          document.body.appendChild(tmp); tmp.select(); document.execCommand('copy'); tmp.remove();
+          msg.textContent='Link copiado (método alternativo).'; msg.style.display='block';
+        }
+      });
+    })();
+  </script>
+</section>
 
 
 
