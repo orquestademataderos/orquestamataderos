@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polideportivo Nueva Chicago — Noche de los Museos • Orquesta de Mataderos</title>
+  <meta name="theme-color" content="#12B886">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green:#12B886;
+      --green-700:#0E8F67;
+      --black:#111;
+      --white:#fff;
+    }
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:#fff;color:#222;
+    }
+    .navbar{background:var(--black);}
+    .navbar-brand,.nav-link{color:#fff !important;}
+    .nav-link:hover{color:var(--green) !important;}
+    .footer{background:var(--black);color:#fff;}
+
+    /* HERO */
+    .hero{
+      position:relative; min-height:60vh;
+      /* cambiá el archivo por la foto que quieras usar del poli */
+      background:url('/img/foto19-1600.jpg') center/cover no-repeat fixed;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 20% 0%, rgba(0,0,0,.75), transparent 60%),
+                 linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.35));
+    }
+    .hero .content{position:relative; z-index:2; color:#fff;}
+    .date-stack{
+      display:inline-block; line-height:1; margin-bottom:.6rem; padding:.35rem .9rem;
+      background:rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.25); border-radius:.75rem;
+      box-shadow:0 .5rem 1.5rem rgba(0,0,0,.45);
+    }
+    .date-big{font-weight:800; font-size: clamp(2rem, 5vw, 3.2rem);}
+    .time-big{font-weight:700; font-size: clamp(1rem, 2.2vw, 1.4rem); opacity:.95}
+    .hero h1{font-weight:800; letter-spacing:.03em}
+    .hero .lead-tag{
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.25rem .75rem; border-radius:999px;
+      background:rgba(0,0,0,.55); font-size:.8rem;
+      text-transform:uppercase; letter-spacing:.14em;
+      margin-bottom:.5rem;
+    }
+
+    /* Bloques */
+    .section-muted{background:#F6F7F8;}
+    .card-flat{background:#fff; border:1px solid #eee; border-radius:.7rem; padding:1.25rem;}
+    .artist-chip{display:inline-block; background:#111; color:#fff; border-radius:.35rem; padding:.25rem .5rem; font-size:.85rem; margin-right:.35rem}
+    .artist-note{color:#666; font-size:.95rem}
+
+    /* Galería */
+    .gallery img{width:100%; height:100%; object-fit:cover; border-radius:.5rem;}
+    .gallery .col{padding:.4rem}
+
+    /* Vídeos */
+    .ratio{border-radius:.6rem; overflow:hidden; border:1px solid #e9ecef}
+    .video-card{background:#000;border-radius:.5rem;overflow:hidden;box-shadow:0 .25rem .75rem rgba(0,0,0,.08)}
+    .video-card iframe{width:100%;height:100%;border:0}
+
+    /* Ratio 9:16 para Shorts */
+    .ratio-9x16{position:relative;width:100%}
+    .ratio-9x16::before{content:"";display:block;padding-top:177.78%}
+    .ratio-9x16 > iframe{position:absolute;inset:0;width:100%;height:100%}
+  </style>
+
+  <!-- Open Graph -->
+  <link rel="canonical" href="https://orquestademataderos.github.io/orquestamataderos/conciertos/polideportivo-nueva-chicago.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Noche de los Museos — Polideportivo Nueva Chicago">
+  <meta property="og:description" content="Crónica, fotos y videos del concierto de la Orquesta de Mataderos en la Noche de los Museos, en el Polideportivo Nueva Chicago.">
+  <meta property="og:url" content="https://orquestademataderos.github.io/orquestamataderos/conciertos/polideportivo-nueva-chicago.html">
+  <meta property="og:image" content="../img/social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Recuerdo — Polideportivo Nueva Chicago">
+  <meta name="twitter:description" content="Crónica, fotos y videos del concierto en la Noche de los Museos.">
+  <meta name="twitter:image" content="../img/social.jpg">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="https://orquestademataderos.github.io/orquestamataderos/">Orquesta Mataderos</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Últimos conciertos
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/concierto_teatro_elplata.html">Teatro El Plata</a></li>
+            <li><a class="dropdown-item" href="/concierto_polideportivo_chicago.html">Polideportivo Nueva Chicago</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO: título del recuerdo -->
+<header class="hero">
+  <div class="content container">
+
+    <div class="hero-meta">
+      <div class="lead-tag">
+        <span>La Noche de los Museos</span>
+        <span>•</span>
+        <span>Polideportivo Nueva Chicago</span>
+      </div>
+
+      <div class="date-stack">
+        <div class="date-big">08·11·25</div>
+        
+      </div>
+    </div>
+
+    <h1 class="display-6 fw-bold text-uppercase">
+      EL BARRIO CANTÓ EN VERDE Y NEGRO
+    </h1>
+    <p class="lead mb-0">
+      Camisetas de <strong>Nueva Chicago</strong>, familias de <strong>Mataderos</strong> y una
+      <strong>Orquesta Infantil</strong> que hizo propia la Noche de los Museos.
+    </p>
+  </div>
+</header>
+
+
+<main>
+  <!-- Crónica / relato -->
+  <section class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <article class="card-flat">
+          <h2 class="h4 fw-bold mb-3">Crónica de una noche en el Polideportivo</h2>
+          <p>
+            Lo que se vivió en el <strong>Polideportivo Nueva Chicago</strong> fue una fiesta bien de barrio:
+            murales, tribunas y banderas en verde y negro recibiendo a la
+            <strong>Orquesta de Mataderos</strong> en el marco de <em>La Noche de los Museos</em>.
+          </p>
+          <p>
+            Desde los primeros temas se mezclaron camisetas del club, chicos y chicas con sus instrumentos
+            y familias ocupando cada rincón del poli. El gimnasio se volvió escenario y platea al mismo tiempo:
+            un gran espacio compartido entre el mundo de la cultura, el deporte y la escuela pública.
+          </p>
+          <p>
+            El <a href="../programa_nuevachicago.html" class="link-dark fw-semibold">repertorio</a> cruzó
+            música popular y académica, con versiones de clásicos del rock nacional, cumbia y bandas sonoras
+            que hicieron cantar a hinchas, vecinos y visitantes. Cada obra fue una excusa para mostrar
+            el trabajo colectivo de cuerdas, vientos y percusión que se viene construyendo ensayo a ensayo.
+          </p>
+          <p class="mb-0">
+            Fue una noche de abrazos, fotos, videos y emoción compartida: el club, la orquesta, las familias
+            y el barrio empujando juntos para que la música encuentre nuevos lugares y nuevas hinchadas.
+          </p>
+        </article>
+
+        <!-- Videos embebidos -->
+        <section class="mt-4">
+          <h3 class="h5 fw-bold mb-3">Videos del concierto</h3>
+
+          <div class="row g-4 align-items-stretch">
+            <!-- Podés reemplazar los IDs por los del poli -->
+            <div class="col-12 col-md-6">
+              <div class="video-card ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/Ffd8p_hHF7U?si=92GwVyuCMQPqdoWI"
+                  title="Raros peinados nuevos — Registro en vivo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="video-card ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/02-aELGmpT4?si=-NoWyS3fydUFPZGp"
+                  title="Arracamelo — Versión orquesta"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="video-card ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/6sZfLZbKBXM?si=2n9l7-LpLaurZiLC"
+                  title="Another brick in the wall — Versión orquesta"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="video-card ratio ratio-16x9">
+                <iframe
+                  src="https://www.youtube.com/embed/P6_Cd18Lq34?si=OjIOO5gP4RlJ4uhe"
+                  title="Nada es suficiente — Versión orquesta"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+           
+          </div>
+        </section>
+      </div>
+
+      <!-- Lateral: datos, agradecimientos y vínculo con el club -->
+      <div class="col-lg-4">
+        <aside class="card-flat">
+          <h3 class="h6 text-uppercase text-muted mb-2">Ficha del concierto</h3>
+          <ul class="list-unstyled small mb-3">
+            <li>📍 <strong>Mataderos, CABA</strong> — Polideportivo Nueva Chicago</li>
+            <li>🗓️ 8 de noviembre</li>
+            <li>🕘 Noche — en el marco de <em>La Noche de los Museos</em></li>
+            <li>🎟️ Entrada libre y gratuita</li>
+          </ul>
+
+          <div class="mb-3">
+            <div class="ratio ratio-4x3 rounded overflow-hidden border">
+              <iframe
+                title="Ubicación Polideportivo Nueva Chicago"
+                src="https://www.google.com/maps?q=Polideportivo+Nueva+Chicago,+Mataderos&output=embed"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;"></iframe>
+            </div>
+            <div class="mt-2">
+              <a class="small text-decoration-none" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=Polideportivo+Nueva+Chicago+Mataderos">
+                Ver el lugar en Google Maps ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="artist-card">
+            <div class="mb-2">
+              <span class="artist-chip">Gracias al club y al barrio</span>
+            </div>
+            <p class="artist-note mb-2">
+              El concierto fue posible gracias al Club Atlético Nueva Chicago, a las áreas culturales
+              que hicieron puente con <em>Noche de los Museos</em> y a todas las personas que se acercaron
+              con ganas de escuchar.
+            </p>
+            <p class="artist-note mb-0">
+              Gracias especiales a familias, profes, asistentes y a cada chica y chico de la orquesta:
+              <strong>cuando el barrio empuja junto, la música llega a todos lados.</strong>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería de fotos -->
+  <section class="section-muted py-5">
+    <div class="container">
+      <h2 class="h4 fw-bold mb-3">Postales de la Noche de los Museos</h2>
+      <p class="mb-4">
+        Algunas imágenes del poli vestido de verde y negro, la orquesta en el centro y el barrio
+        acompañando.
+      </p>
+
+      <style>
+        /* ---- Galería: grilla + hover zoom ---- */
+        .gallery .col{ margin-bottom:1rem; }
+        .gallery img{
+          display:block; width:100%; height:100%; aspect-ratio:4/3; object-fit:cover;
+          border-radius:.6rem; transition:transform .25s ease, box-shadow .25s ease;
+          cursor:zoom-in; box-shadow:0 1px 8px rgba(0,0,0,.08); will-change:transform;
+        }
+        .gallery img:hover{ transform:scale(1.04); box-shadow:0 6px 24px rgba(0,0,0,.18); }
+
+        /* ---- Lightbox (pantalla completa) ---- */
+        .lightbox-overlay{
+          position:fixed; inset:0; background:rgba(0,0,0,.92);
+          display:none; align-items:center; justify-content:center; z-index:1050;
+        }
+        .lightbox-overlay.is-open{ display:flex; }
+        .lightbox-img{
+          max-width:92vw; max-height:92vh; border-radius:.6rem;
+          box-shadow:0 10px 40px rgba(0,0,0,.5); cursor:zoom-out; user-select:none;
+        }
+        .lightbox-hint{
+          position:fixed; bottom:18px; left:50%; transform:translateX(-50%);
+          color:#fff; font-size:.9rem; opacity:.8; user-select:none; pointer-events:none;
+        }
+        @media (max-width:575.98px){ .lightbox-hint{ font-size:.8rem; } }
+
+        /* ---- Flechas navegación ---- */
+        .lightbox-nav{
+          position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between;
+          pointer-events:none;
+        }
+        .lightbox-btn{
+          pointer-events:auto; width:48px; height:48px; border-radius:50%;
+          display:grid; place-items:center; background:rgba(255,255,255,.14);
+          border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(2px);
+          color:#fff; font-size:24px; line-height:1; cursor:pointer; user-select:none;
+          transition:background .2s ease, transform .1s ease;
+        }
+        .lightbox-btn:hover{ background:rgba(255,255,255,.22); }
+        .lightbox-btn:active{ transform:scale(.96); }
+        .lightbox-btn--prev{ margin-left:12px; }
+        .lightbox-btn--next{ margin-right:12px; }
+        @media (max-width:575.98px){
+          .lightbox-btn{ width:56px; height:56px; font-size:26px; }
+        }
+      </style>
+
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 gallery" id="galeriaFotos">
+        <!-- Cambiá los nombres de archivo por las fotos del poli -->
+        <div class="col">
+          <img
+            src="../img/foto10-960.jpg"
+            srcset="../img/foto10-480.jpg 480w, ../img/foto10-960.jpg 960w, ../img/foto10-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Orquesta en el centro de la cancha" loading="lazy" decoding="async">
+        </div>
+        <div class="col">
+          <img
+            src="../img/foto12-960.jpg"
+            srcset="../img/foto12-480.jpg 480w, ../img/foto12-960.jpg 960w, ../img/foto12-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Tribunas del poli durante el concierto" loading="lazy" decoding="async">
+        </div>
+        <div class="col">
+          <img
+            src="/img/foto11-960.jpg"
+            srcset="../img/foto11-480.jpg 480w, ../img/foto11-960.jpg 960w, ../img/foto11-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Detalle de los instrumentos en escena" loading="lazy" decoding="async">
+        </div>
+        <div class="col">
+          <img
+            src="../img/foto13-960.jpg"
+            srcset="../img/foto13-480.jpg 480w, ../img/foto13-960.jpg 960w, ../img/foto13-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Fila de cuerdas y directoría" loading="lazy" decoding="async">
+        </div>
+        <div class="col">
+          <img
+            src="../img/foto14-960.jpg"
+            srcset="../img/foto14-480.jpg 480w, ../img/foto14-960.jpg 960w, ../img/foto14-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Vientos con tribuna de fondo" loading="lazy" decoding="async">
+        </div>
+        <div class="col">
+          <img
+            src="../img/foto15-960.jpg"
+            srcset="../img/foto15-480.jpg 480w, ../img/foto15-960.jpg 960w, ../img/foto15-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Percusión y luces de la noche" loading="lazy" decoding="async">
+        </div>
+        <div class="col">
+          <img
+            src="../img/foto16-960.jpg"
+            srcset="../img/foto16-480.jpg 480w, ../img/foto16-960.jpg 960w, ../img/foto16-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Foto grupal con hinchas y familias" loading="lazy" decoding="async">
+        </div>
+        <div class="col">
+          <img
+            src="../img/foto17-960.jpg"
+            srcset="../img/foto17-480.jpg 480w, ../img/foto17-960.jpg 960w, ../img/foto17-1600.jpg 1600w"
+            sizes="(max-width:576px) 50vw, (max-width:992px) 33vw, 25vw"
+            alt="Cierre del concierto en el poli" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+        <div class="lightbox-nav">
+          <button class="lightbox-btn lightbox-btn--prev" id="lbPrev" aria-label="Anterior">‹</button>
+          <button class="lightbox-btn lightbox-btn--next" id="lbNext" aria-label="Siguiente">›</button>
+        </div>
+        <img class="lightbox-img" id="lightboxImg" alt="">
+        <div class="lightbox-hint">Clic o Esc para cerrar · ← / → para navegar</div>
+      </div>
+
+      <script>
+        (function(){
+          const grid     = document.getElementById('galeriaFotos');
+          const overlay  = document.getElementById('lightbox');
+          const lbImg    = document.getElementById('lightboxImg');
+          const btnPrev  = document.getElementById('lbPrev');
+          const btnNext  = document.getElementById('lbNext');
+
+          const imgs = Array.from(grid.querySelectorAll('img'));
+          let idx = -1;
+
+          function showAt(i){
+            if(!imgs.length) return;
+            idx = (i + imgs.length) % imgs.length;
+            const el = imgs[idx];
+            lbImg.src = el.getAttribute('src');
+            lbImg.alt = el.getAttribute('alt') || '';
+          }
+
+          function openLightbox(fromIndex){
+            showAt(fromIndex);
+            overlay.classList.add('is-open');
+            overlay.setAttribute('aria-hidden','false');
+            document.body.style.overflow = 'hidden';
+          }
+          function closeLightbox(){
+            overlay.classList.remove('is-open');
+            overlay.setAttribute('aria-hidden','true');
+            lbImg.src = '';
+            document.body.style.overflow = '';
+          }
+
+          grid.addEventListener('click', (e) => {
+            const img = e.target.closest('img');
+            if(!img) return;
+            const i = imgs.indexOf(img);
+            if(i !== -1) openLightbox(i);
+          });
+
+          btnPrev.addEventListener('click', (e)=>{ e.stopPropagation(); showAt(idx-1); });
+          btnNext.addEventListener('click', (e)=>{ e.stopPropagation(); showAt(idx+1); });
+
+          overlay.addEventListener('click', closeLightbox);
+
+          btnPrev.addEventListener('click', (e)=> e.stopPropagation());
+          btnNext.addEventListener('click', (e)=> e.stopPropagation());
+
+          document.addEventListener('keydown', (e) => {
+            if(!overlay.classList.contains('is-open')) return;
+            if(e.key === 'Escape') closeLightbox();
+            else if(e.key === 'ArrowLeft')  showAt(idx-1);
+            else if(e.key === 'ArrowRight') showAt(idx+1);
+          });
+
+          lbImg.addEventListener('touchmove', (e) => e.preventDefault(), { passive:false });
+        })();
+      </script>
+    </div>
+  </section>
+
+  <!-- Repertorio (enlace al programa) + comentario del público -->
+  <section class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="card-flat">
+          <h3 class="h5 fw-bold mb-2">Repertorio</h3>
+          <p class="mb-3">
+            Si querés volver a escuchar con la memoria los temas de esa noche, podés ver el
+            <a href="../programa.html" class="link-dark fw-semibold">programa completo del concierto</a>.
+          </p>
+          <ul class="mb-0">
+            <li>Versiones orquestales de clásicos del rock nacional y la cumbia</li>
+            <li>Obras académicas que conviven con ritmos populares</li>
+            <li>Arreglos pensados para que participe toda la orquesta</li>
+            <li>Guiños al barrio, al club y a la hinchada</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card-flat">
+          <h3 class="h6 text-uppercase text-muted mb-2">Lo que dijo la gente</h3>
+          <p class="mb-2">“Ver la orquesta en el poli fue emocionante. El barrio entero aplaudiendo junto.”</p>
+          <p class="mb-2">“La mezcla de camisetas, instrumentos y familias fue hermosísima. Ojalá se repita.”</p>
+          <p class="mb-0">“Una noche de museos distinta: al aire libre, en Mataderos y con nuestra orquesta.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a class="btn btn-outline-dark btn-sm" href="../conciertos/index.html">← Volver a “Últimos conciertos”</a>
+      <a class="btn btn-dark btn-sm ms-2" href="../index.html">Ir al inicio</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer py-4 mt-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <div>© Orquesta Infantil y Juvenil de Mataderos</div>
+    <div class="d-flex gap-3">
+      <a class="link-light text-decoration-none" href="https://www.instagram.com/orquestamataderos/">Instagram</a>
+      <a class="link-light text-decoration-none" href="https://www.youtube.com/@orquestamataderos">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
