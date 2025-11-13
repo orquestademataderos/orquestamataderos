@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Concierto • Sábado 8 de noviembre • Orquesta de Mataderos</title>
+  <title>Concierto • Jueves 27 de noviembre • Orquesta de Mataderos</title>
   <meta name="theme-color" content="#10C298">
 
   <!-- CSS -->
@@ -14,9 +14,9 @@
   <style>
     /* —— Tema (misma paleta, gama levemente distinta) —— */
     :root{
-      --green:#10C298;       /* antes #12B886 */
-      --green-700:#0A8E6F;   /* antes #0E8F67 */
-      --black:#0E0E0E;       /* antes #111 */
+      --green:#10C298;
+      --green-700:#0A8E6F;
+      --black:#0E0E0E;
       --white:#fff;
     }
     body{
@@ -30,22 +30,54 @@
     .dropdown-menu{border-radius:.5rem; overflow:hidden}
     .dropdown-item:active{background:var(--green);}
 
-    /* HERO */
-    .hero{ position:relative; min-height:72vh;
-           background:url('img/f6-1600-1600.jpg') center/cover no-repeat fixed;
-           display:flex; align-items:center; justify-content:center; text-align:center; }
-    .hero::before{content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.35));}
-    .hero .content{position:relative; z-index:2; color:#fff;}
+    /* HERO: ahora el carrusel es el fondo */
+    .hero{
+      position:relative;
+      min-height:72vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.70),rgba(0,0,0,.35));
+      z-index:1;
+    }
+    .hero .content{
+      position:relative;
+      z-index:2;
+      color:#fff;
+    }
     .date-stack{
       display:inline-block; line-height:1; margin-bottom:.6rem; padding:.4rem .9rem;
       background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.25); border-radius:.6rem;
       backdrop-filter:saturate(120%) blur(2px);
     }
-    .date-big{font-weight:800; font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing: .5px;}
+    .date-big{font-weight:800; font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing:.5px;}
     .time-big{font-weight:700; font-size: clamp(1.1rem, 2.5vw, 1.6rem); opacity:.95}
     .hero h1{font-weight:800; letter-spacing:.02em}
     .hero .sub{opacity:.95}
+
+    /* Contador destacado */
+#countdown{
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:1rem auto 1.2rem;
+  padding:.6rem 1.2rem;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:.75rem;
+  backdrop-filter:saturate(120%) blur(2px);
+  display:inline-block;
+  color:#fff;
+}
+
 
     /* Botones / secciones */
     .btn-brand{background:var(--green);color:#fff;border:0;border-radius:.6rem;}
@@ -59,32 +91,60 @@
     .artist-chip{display:inline-block; background:#111; color:#fff; border-radius:.35rem; padding:.25rem .5rem; font-size:.85rem; margin-right:.35rem}
     .artist-note{color:#666; font-size:.95rem}
 
-    /* Imagen historia (sin cambios) */
-    .history-photo{aspect-ratio: 4 / 3; object-fit: cover; width:100%; border-radius:.6rem;}
-
-    .artist-card{
-      background:#FAFAFA; border:1px solid #EEE; border-radius:.6rem;
-      padding:1rem 1.25rem; margin-top:1rem;
+    /* Imagen historia (ajustada) */
+    .history-photo{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:cover;
+      border-radius:.8rem;
+      box-shadow:0 6px 24px rgba(0,0,0,.12);
     }
-    .artist-item{display:flex;gap:.6rem;align-items:flex-start;margin:.35rem 0}
+    @media (max-width: 575.98px){
+      .history-photo{ aspect-ratio: 1 / 1; }
+    }
+    @media (min-width: 576px) and (max-width: 991.98px){
+      .history-photo{ aspect-ratio: 4 / 3; }
+    }
+    @media (min-width: 992px){
+      .history-photo{ aspect-ratio: 16 / 10; }
+    }
+
+    /* Carrusel ocupando todo el fondo del HERO */
+    .hero-carousel{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      max-width:none;
+      margin:0;
+      border-radius:0;
+      overflow:hidden;
+      border:none;
+      box-shadow:none;
+    }
+    .hero-carousel .carousel-inner,
+    .hero-carousel .carousel-item{
+      height:100%;
+    }
+    .hero-carousel img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
   </style>
 
   <!-- Open Graph / Twitter -->
   <link rel="canonical" href="https://orquestademataderos.github.io/orquestamataderos/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Concierto • Sábado 8/11 • Orquesta de Mataderos">
-  <meta property="og:description" content="8 de noviembre, 19:30 • Polideportivo de Nueva Chicago • En el marco de La Noche de los Museos.">
+  <meta property="og:title" content="Concierto • Jueves 27/11 • Orquesta de Mataderos">
+  <meta property="og:description" content="27 de noviembre, 18:00 • Museo de Arte Moderno de Buenos Aires (San Telmo).">
   <meta property="og:url" content="https://orquestademataderos.github.io/orquestamataderos/">
   <meta property="og:image" content="img/social.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Concierto • 8/11 • Orquesta de Mataderos">
-  <meta name="twitter:description" content="19:30 • Polideportivo de Nueva Chicago • La Noche de los Museos.">
+  <meta name="twitter:title" content="Concierto • 27/11 • Orquesta de Mataderos">
+  <meta name="twitter:description" content="18:00 • Museo de Arte Moderno de Buenos Aires (San Telmo).">
   <meta name="twitter:image" content="img/social.jpg">
 </head>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-
 <body>
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
@@ -97,15 +157,14 @@
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="ddConciertos" role="button"
-     data-bs-toggle="dropdown" aria-expanded="false">
-    Últimos Conciertos
-  </a>
-  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ddConciertos">
-    <li><a class="dropdown-item" href="./concierto_teatro_elplata.html">Teatro El Plata</a></li>
-  </ul>
-</li>
-
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Últimos conciertos
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/concierto_teatro_elplata.html">Teatro El Plata</a></li>
+            <li><a class="dropdown-item" href="/concierto_polideportivo_chicago.html">Polideportivo Nueva Chicago</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
@@ -113,71 +172,93 @@
 
 <!-- HERO próximo concierto -->
 <header class="hero">
-  <div class="content container">
-    <div class="date-stack">
-      <div class="date-big">08-11</div>
-      <div class="time-big">19:30 HS</div>
+
+  <!-- Carrusel de fondo -->
+  <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
     </div>
-    <h1 class="display-5 fw-bold text-uppercase">POLIDEPORTIVO • NUEVA CHICAGO</h1>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../img/foto21-960.jpg" class="d-block w-100" alt="Felicidad del publico">
+      </div>
+      <div class="carousel-item">
+        <img src="../img/foto22-960.jpg" class="d-block w-100" alt="Interior del Museo Moderno">
+      </div>
+      <div class="carousel-item">
+        <img src="../img/foto23-960.jpg" class="d-block w-100" alt="Detalle del Museo Moderno">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Contenido encima -->
+  <div class="content container">
+
+    <div class="date-stack">
+      <div class="date-big">27-11</div>
+      <div class="time-big">18:00 HS</div>
+    </div>
+
+    <h1 class="display-5 fw-bold text-uppercase">
+      MUSEO DE ARTE MODERNO
+    </h1>
+
+    <!-- CUENTA REGRESIVA DESTACADA -->
+    <p id="countdown" class="fw-bold"></p>
 
     <p class="sub mb-2">
-      Sábado 8 de noviembre — En el marco de <strong>La Noche de los Museos</strong>. Entrada libre y gratuita.
+      <strong>Concierto de la Orquesta de Mataderos en el
+      Museo de Arte Moderno de Buenos Aires.Entrada libre y gratuita.</strong> 
     </p>
 
     <a href="#novedades" class="btn btn-brand btn-lg px-4">Quiero ir</a>
   </div>
 </header>
 
+
+
 <main>
   <!-- Invitación + rol de la orquesta + artistas (sección informativa) -->
   <section class="container py-5">
     <div class="row g-4 align-items-center">
       <div class="col-lg-6">
-        <h2 class="h3 fw-bold">La orquesta del barrio</h2>
+        <h2 class="h3 fw-bold">La orquesta del barrio en el Museo Moderno</h2>
 
         <p>
-          Somos la Orquesta Infantil y Juvenil de Mataderos, parte del
-          <strong>Programa de Orquestas Infantiles y Juveniles de la Ciudad</strong>.
-          Nuestro próximo concierto se realiza en el contexto de <strong>La Noche de los Museos</strong>,
-          una celebración cultural en la que espacios de la ciudad abren sus puertas con actividades para toda la comunidad.
+          La Orquesta Infantil y Juvenil de Mataderos forma parte del
+          <strong>Programa de Orquestas Infantiles y Juveniles de la Ciudad</strong>, una política pública que
+          acerca formación musical, instrumentos y escenarios a chicas y chicos de distintos barrios.
         </p>
 
         <p>
-          El <a href="programa.html" class="link-dark fw-semibold">repertorio (programa)</a> de la jornada pondrá en primer plano
-          el trabajo en equipo, la emoción y la energía de cuerdas, vientos y percusión — con obras populares y académicas,
-          y guiños a nuestro barrio.
+          Esta vez nos encontramos en el <strong>Museo de Arte Moderno de Buenos Aires</strong>, un espacio cultural
+          del barrio de <strong>San Telmo</strong> dedicado al arte contemporáneo, la creación y el diálogo con las comunidades.
+          Compartir nuestra música en un museo público es una forma más de abrir puertas entre el barrio y la ciudad.
+        </p>
+
+        <p>
+          El <a href="programa.html" class="link-dark fw-semibold">repertorio (programa)</a> combina obras académicas y populares,
+          pensado para que familias, visitantes del museo y vecinos puedan reconocer melodías, descubrir nuevas músicas
+          y ver de cerca el trabajo colectivo de cuerdas, vientos y percusión.
         </p>
 
         <p class="mb-0">
-          Te esperamos con familia, amigos y vecinos. <strong>La entrada es libre y gratuita</strong> y el espíritu es el mismo de siempre:
-          comunidad, música y encuentro.
+          Te invitamos a venir con tu familia, amistades y quien quieras sumar. <strong>La entrada es libre y gratuita</strong>:
+          lo más importante es encontrarnos, escuchar y seguir construyendo comunidad alrededor de la orquesta.
         </p>
-
-        <!-- (Si mantenés enlaces a artistas / homenaje, dejalos aquí si corresponde al evento) -->
-        <!--
-        <div class="artist-card">
-          <div class="mb-2">
-            <span class="artist-chip">Artistas invitadas</span>
-          </div>
-          <div class="artist-item">
-            <div>🎤</div>
-            <div>
-              <a href="artistas/maria-ezquiaga.html" class="link-dark fw-semibold">María Ezquiaga</a>
-              <span class="artist-note">— canciones en homenaje a Gabo Ferro.</span>
-            </div>
-          </div>
-          <div class="artist-item">
-            <div>📖</div>
-            <div>
-              <a href="artistas/celeste-ferreyra.html" class="link-dark fw-semibold">Celeste Ferreyra</a>
-              <span class="artist-note">— lectura de poesía.</span>
-            </div>
-          </div>
-        </div>
-        -->
       </div>
 
-      <!-- Video (sin cambios) -->
+      <!-- Video de invitación / registro -->
       <div class="col-lg-6">
         <div class="ratio ratio-16x9 rounded shadow">
           <iframe
@@ -192,32 +273,32 @@
     </div>
   </section>
 
-  <!-- Novedades + sección “fue en…” (ahora: próxima ubicación/promoción del lugar) -->
+  <!-- Novedades + sección ubicación Museo Moderno -->
   <section id="novedades" class="section-muted py-5">
     <div class="container">
       <div class="row g-4">
-        <!-- Próximo concierto + mapa del Polideportivo -->
+        <!-- Próximo concierto + mapa del Museo Moderno -->
         <div class="col-md-6">
           <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h3 class="h5 fw-bold mb-3">Próximo concierto — Sábado 8 de noviembre</h3>
+            <h3 class="h5 fw-bold mb-3">Próximo concierto — Jueves 27 de noviembre</h3>
             <ul class="list-unstyled mb-3">
-              <li>📍 <strong>Polideportivo de Nueva Chicago</strong> — Mataderos, CABA</li>
-              <li>🗓️ <strong>8 de noviembre</strong></li>
-              <li>🕖 <strong>19:30 hs</strong></li>
+              <li>📍 <strong>Museo de Arte Moderno de Buenos Aires</strong> — Av. San Juan 350, San Telmo</li>
+              <li>🗓️ <strong>Jueves 27 de noviembre</strong></li>
+              <li>🕕 <strong>18:00 hs</strong></li>
               <li>🎟️ <strong>Entrada libre y gratuita</strong></li>
             </ul>
 
             <div class="ratio ratio-4x3 rounded overflow-hidden border">
               <iframe
-                title="Polideportivo de Nueva Chicago — Mapa"
-                src="https://www.google.com/maps?q=Polideportivo+Nueva+Chicago,+Mataderos&output=embed"
+                title="Museo de Arte Moderno de Buenos Aires — Mapa"
+                src="https://www.google.com/maps?q=Museo+de+Arte+Moderno+de+Buenos+Aires&output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 style="border:0;"></iframe>
             </div>
             <div class="mt-2">
               <a class="small text-decoration-none" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Polideportivo+Nueva+Chicago+Mataderos">
+                 href="https://www.google.com/maps/search/?api=1&query=Museo+de+Arte+Moderno+de+Buenos+Aires">
                 Ver cómo llegar en Google Maps ↗
               </a>
             </div>
@@ -252,7 +333,7 @@
               </div>
 
               <div class="alert alert-success mt-3 mb-2 p-2 w-100" role="alert">
-                <strong>Novedad:</strong> evento en el marco de <em>La Noche de los Museos</em>. ¡Te esperamos!
+                <strong>Novedad:</strong> la orquesta llega al Museo de Arte Moderno. ¡Sumate y ayudanos a difundir!
               </div>
 
               <div class="d-grid mt-2">
@@ -272,8 +353,8 @@
     <script>
       (function(){
         const url   = 'https://orquestademataderos.github.io/orquestamataderos/';
-        const text  = 'Orquesta de Mataderos • Próximo concierto 8/11 (Polideportivo Nueva Chicago) • La Noche de los Museos';
-        const title = 'Orquesta de Mataderos — 8/11';
+        const text  = 'Orquesta de Mataderos • Concierto 27/11 (Museo de Arte Moderno de Buenos Aires, San Telmo)';
+        const title = 'Orquesta de Mataderos — 27/11 Museo Moderno';
 
         const encUrl  = encodeURIComponent(url);
         const encText = encodeURIComponent(text);
@@ -296,7 +377,8 @@
         });
 
         document.getElementById('btnCopy2').addEventListener('click', async () => {
-          try { await navigator.clipboard.writeText(url);
+          try {
+            await navigator.clipboard.writeText(url);
             msg.textContent='Link copiado. ¡Pegalo donde quieras!'; msg.style.display='block';
           } catch(e){
             const tmp = document.createElement('input'); tmp.value = url;
@@ -308,75 +390,53 @@
     </script>
   </section>
 
-  <!-- Historia (igual, con link al programa general) -->
-<section class="container pb-5">
-  <style>
-    /* Ajuste fino de la imagen de “Historia” según el tamaño de pantalla */
-    .history-photo{
-      display:block;
-      width:100%;
-      height:auto;            /* fallback */
-      object-fit:cover;
-      border-radius:.8rem;
-      box-shadow:0 6px 24px rgba(0,0,0,.12);
-    }
-    /* En móviles: cuadrada para no “estirar” la columna */
-    @media (max-width: 575.98px){
-      .history-photo{ aspect-ratio: 1 / 1; }
-    }
-    /* En tablets: 4:3 (clásica de la galería y coherente con tus recortes) */
-    @media (min-width: 576px) and (max-width: 991.98px){
-      .history-photo{ aspect-ratio: 4 / 3; }
-    }
-    /* En desktop: un poco más panorámica para equilibrar con el texto */
-    @media (min-width: 992px){
-      .history-photo{ aspect-ratio: 16 / 10; }
-    }
-  </style>
+  <!-- Historia (mismo mensaje, texto renovado) -->
+  <section class="container pb-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <img
+          src="../img/foto24-960.jpg"
+          srcset="../img/foto24-480.jpg 480w, ../img/foto24-960.jpg 960w, ../img/foto24-1600.jpg 1600w"
+          sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 600px"
+          class="history-photo"
+          alt="La orquesta en escena"
+          width="960" height="720"
+          loading="lazy" decoding="async">
+      </div>
 
-  <div class="row g-4 align-items-center">
-    <div class="col-lg-6">
-      <img
-        src="img/f6-960.jpg"
-        srcset="img/foto3-480.jpg 480w, img/foto3-960.jpg 960w, img/foto3-1600.jpg 1600w"
-        sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 600px"
-        class="history-photo"
-        alt="La orquesta en escena"
-        width="960" height="720"
-        loading="lazy" decoding="async">
-    </div>
+      <div class="col-lg-6">
+        <h2 class="h4 fw-bold">Historia y presente de la orquesta</h2>
 
-    <div class="col-lg-6">
-      <h2 class="h4 fw-bold">Un poco de historia</h2>
+        <p>
+          La Orquesta Infantil y Juvenil de Mataderos nace y crece dentro del
+          <strong>Programa de Orquestas Infantiles y Juveniles de la Ciudad</strong>,
+          que desde hace más de dos décadas impulsa el acceso a la música como derecho
+          y como espacio de encuentro para niñas, niños y jóvenes.
+        </p>
 
-      <p>
-        La Orquesta Infantil y Juvenil de Mataderos forma parte del
-        <strong>Programa de Orquestas Infantiles y Juveniles de la Ciudad</strong>,
-        una política pública con <strong>más de 25 años</strong> acercando
-        formación musical gratuita, instrumentos, ensayos y escenarios a niñas, niños y jóvenes.
-      </p>
+        <p>
+          En nuestro barrio ensayamos en la <strong>Escuela Nº 19 D.E. 20</strong>, donde la orquesta se volvió
+          un punto de reunión entre escuela, familias y vecinos. Cada ensayo y cada concierto ayudan a fortalecer
+          la trayectoria escolar, la confianza, el trabajo en equipo y el orgullo de pertenecer a
+          <em>Mataderos</em>.
+        </p>
 
-      <p>
-        En nuestro barrio ensayamos en la <strong>Escuela Nº 19 D.E. 20</strong>, donde la orquesta
-        es un punto de encuentro entre escuela, familias y vecinos. La práctica orquestal fortalece
-        la trayectoria escolar, el trabajo en equipo, la escucha y el orgullo de pertenecer a
-        <em>Mataderos</em>.
-      </p>
+        <p>
+          Todo esto es posible gracias a una construcción <strong>colectiva</strong>: profes, chicos y chicas,
+          familias y personas del barrio que ponen tiempo, energía y afecto para que la música siga sonando
+          y llegue a lugares nuevos, como el Museo de Arte Moderno.
+          Si alguien cercano quiere sumarse, <strong>contactanos por las redes</strong> que figuran en el pie de página
+          y te contamos cómo hacerlo.
+        </p>
 
-      <p>
-        Somos una construcción <strong>comunitaria</strong>: profes, chicos y chicas, familias y vecinos empujamos para que la música siga abriendo puertas.
-        Si querés que tu hija, hijo o alguien cercano se sume, <strong>contactanos por las redes</strong>
-        que figuran en el pie de página — te orientamos con días, horarios y requisitos.
-      </p>
-
-      <div class="mt-3">
-        <a class="btn btn-outline-dark btn-sm" href="programa-orquestas.html">
-          Conocé más sobre el Programa de Orquestas →
-        </a>
+        <div class="mt-3">
+          <a class="btn btn-outline-dark btn-sm" href="programa-orquestas.html">
+            Conocé más sobre el Programa de Orquestas →
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
@@ -393,11 +453,39 @@
 <!-- Script viejo opcional (no interfiere) -->
 <script>
   const shareUrl   = 'https://orquestademataderos.github.io/orquestamataderos/';
-  const shareText  = 'Orquesta de Mataderos • Próximo concierto 8/11 (Polideportivo Nueva Chicago) • La Noche de los Museos';
-  const shareTitle = 'Orquesta de Mataderos — 8/11';
+  const shareText  = 'Orquesta de Mataderos • Concierto 27/11 (Museo de Arte Moderno de Buenos Aires, San Telmo)';
+  const shareTitle = 'Orquesta de Mataderos — 27/11 Museo Moderno';
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></scri
 
+<!-- Bootstrap + contador -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Contador regresivo al 27/11/2025 18:00 hs (hora de Buenos Aires)
+  (function(){
+    const target = new Date('2025-11-27T18:00:00-03:00').getTime();
+    const el = document.getElementById('countdown');
+    if (!el) return;
 
+    function update(){
+      const now = Date.now();
+      const diff = target - now;
 
+      if (diff <= 0){
+        el.textContent = '¡Hoy toca la orquesta en el Museo Moderno!';
+        return;
+      }
 
+      const sec  = Math.floor(diff / 1000);
+      const days = Math.floor(sec / 86400);
+      const hrs  = Math.floor((sec % 86400) / 3600);
+      const mins = Math.floor((sec % 3600) / 60);
+
+      el.textContent = `Faltan ${days} días, ${hrs} hs y ${mins} min`;
+    }
+
+    update();
+    setInterval(update, 60000);
+  })();
+</script>
+</body>
+</html>
