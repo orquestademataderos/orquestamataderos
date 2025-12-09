@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Concierto de cierre en la escuela • Orquesta de Mataderos</title>
+  <meta name="theme-color" content="#10C298">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Open Graph / Twitter -->
+  <link rel="canonical" href="https://orquestademataderos.github.io/orquestamataderos/concierto_cierre_escuela.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Concierto de cierre en la escuela • Orquesta de Mataderos">
+  <meta property="og:description" content="Crónica del concierto de cierre de año en la Escuela Nº 19 D.E. 20, con feria del plato, sorteos y el acompañamiento de todas las familias.">
+  <meta property="og:url" content="https://orquestademataderos.github.io/orquestamataderos/concierto_cierre_escuela.html">
+  <meta property="og:image" content="img/social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Concierto de cierre en la escuela • Orquesta de Mataderos">
+  <meta name="twitter:description" content="Celebración de fin de año en la escuela, con música, feria del plato y sorteos.">
+  <meta name="twitter:image" content="img/social.jpg">
+
+  <style>
+    :root{
+      --green:#10C298;
+      --green-700:#0A8E6F;
+      --black:#0E0E0E;
+      --bg:#F5F6F7;
+    }
+    body{
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:#fff;color:#222;letter-spacing:.1px;
+    }
+    .navbar{background:var(--black);}
+    .navbar-brand,.nav-link{color:#fff !important;}
+    .nav-link:hover{color:var(--green) !important;}
+    .footer{background:var(--black);color:#fff;}
+    .btn-brand{background:var(--green);color:#fff;border:0;border-radius:.6rem;}
+    .btn-brand:hover{background:var(--green-700);color:#fff;}
+    .section-muted{background:var(--bg);}
+    .card-soft{background:#fff;border:1px solid #eee;border-radius:.9rem;padding:1.5rem;}
+    .pill{
+      display:inline-block;font-size:.78rem;font-weight:600;
+      text-transform:uppercase;letter-spacing:.12em;
+      padding:.3rem .7rem;border-radius:999px;
+      background:rgba(0,0,0,.06);
+    }
+
+    /* HERO con imagen responsive de fondo */
+    .hero{
+      position:relative;
+      min-height:72vh;
+      display:flex;
+      align-items:center;
+      text-align:left;
+      color:#fff;
+      overflow:hidden;
+      background:#0E0E0E; /* fallback */
+    }
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+    }
+    .hero-bg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(22,208,161,.85) 0, transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(12,140,108,.85) 0, transparent 55%),
+        linear-gradient(135deg,rgba(14,14,14,.95),rgba(17,24,34,.95));
+      mix-blend-mode:multiply;
+      opacity:.85;
+    }
+
+    .hero-inner{position:relative;z-index:1;}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:.4rem;
+      background:rgba(0,0,0,.55);
+      border-radius:999px;
+      padding:.35rem .9rem;
+      border:1px solid rgba(255,255,255,.2);
+      backdrop-filter:blur(3px);
+      font-size:.86rem;
+    }
+    .hero-date{
+      display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;
+      font-size:.92rem;opacity:.92;
+    }
+    .hero h1{
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      font-size:clamp(2.1rem,4vw,3rem);
+      margin-top:.8rem;
+    }
+    .hero-lead{
+      max-width:34rem;
+      font-size:1rem;
+      opacity:.95;
+    }
+    .hero-buttons .btn{min-width:150px;}
+    @media (max-width: 767.98px){
+      .hero{text-align:center;justify-content:center;}
+      .hero-lead{margin-inline:auto;}
+      .hero-buttons{justify-content:center;}
+    }
+    .timeline-dot{
+      width:10px;height:10px;border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 0 6px rgba(16,194,152,.18);
+      margin-top:.35rem;
+    }
+    .timeline-line{
+      width:2px;background:rgba(0,0,0,.08);flex:1;margin:0 auto;
+    }
+    .year-pill{
+      font-weight:700;font-size:.88rem;
+      padding:.1rem .5rem;border-radius:999px;
+      background:rgba(16,194,152,.08);
+      color:#0A8E6F;
+    }
+    .small-muted{font-size:.85rem;color:#666;}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Orquesta Mataderos</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Últimos conciertos
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="./concierto_teatro_elplata.html">Teatro El Plata</a></li>
+            <li><a class="dropdown-item" href="./concierto_polideportivo_chicago.html">Polideportivo Nueva Chicago</a></li>
+            <li><a class="dropdown-item" href="./concierto_museo_moderno.html">Museo de Arte Moderno</a></li>
+            <li><a class="dropdown-item" href="./concierto_cierre_escuela.html">Cierre en la Escuela Nº 19</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO: recuerdo -->
+<header class="hero">
+  <picture class="hero-bg">
+    <source srcset="./img/foto11-1600.jpg" media="(min-width: 992px)">
+    <source srcset="./img/foto11-960.jpg" media="(min-width: 576px)">
+    <img src="./img/foto11-480.jpg" alt="Concierto de cierre de año de la Orquesta de Mataderos" loading="lazy">
+  </picture>
+
+  <div class="container hero-inner py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <div class="hero-badge mb-2">
+          <span>🎓 Cierre de ciclo</span>
+          <span>•</span>
+          <span>🎶 Concierto en la escuela</span>
+        </div>
+
+        <div class="hero-date">
+          <span><strong>Sábado 6 de diciembre</strong></span>
+          <span>· Escuela Nº 19 D.E. 20 — Mataderos</span>
+        </div>
+
+        <h1>Así vivimos el concierto de cierre en la escuela</h1>
+
+        <p class="hero-lead mb-3">
+          Chicas y chicos de la orquesta, familias, docentes y vecinos llenaron el patio de la escuela
+          para despedir el año con música, abrazos y actividades que fueron una fiesta.
+        </p>
+
+        <div class="d-flex flex-wrap gap-2 hero-buttons">
+          <a href="#cronica" class="btn btn-brand btn-lg px-4">Leer la crónica</a>
+          <a href="#logros" class="btn btn-outline-light btn-lg px-4">Lo que logramos este año</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- CRÓNICA DEL DÍA -->
+  <section id="cronica" class="container py-5">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-7">
+        <span class="pill mb-2">Crónica del cierre</span>
+        <h2 class="h3 fw-bold mb-3">Un concierto en casa, para el barrio y las familias</h2>
+
+        <p>
+          El <strong>sábado 6 de diciembre</strong> la <strong>Escuela Nº 19 D.E. 20</strong> se convirtió una vez más
+          en escenario de la <strong>Orquesta Infantil y Juvenil de Mataderos</strong>. El patio, las galerías y las aulas
+          se llenaron de familias, chicos y chicas que llegaron con instrumentos, cosas ricas para compartir y muchas ganas de celebrar.
+        </p>
+        <p>
+          La orquesta tocó en su lugar de ensayo, pero esta vez con el barrio mirando: se mezclaron violines,
+          cellos, vientos, percusión y coros espontáneos de madres, padres, abuelas y amigos. Cada tema fue un resumen
+          del trabajo de todo el año y un agradecimiento a quienes acompañan ensayo tras ensayo.
+        </p>
+
+        <ul>
+          <li>🎻 Concierto de la orquesta completa en el patio de la escuela.</li>
+          <li>🎺 Participación de todas las áreas: cuerdas, vientos, percusión y lenguaje musical.</li>
+          <li>👨‍👩‍👧‍👦 Patio lleno de familias, docentes, vecinos y vecinas de Mataderos.</li>
+        </ul>
+
+        <p class="mb-0">
+          Fue un cierre de ciclo <strong>entre todos</strong>, en el mismo lugar donde la orquesta sueña y ensaya cada semana.
+        </p>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="card-soft h-100 d-flex flex-column">
+          <h3 class="h5 fw-bold mb-3">Platos para compartir y sorteos: una fiesta comunitaria</h3>
+          <p>
+            La <strong>degustación de platos</strong> fue un éxito: se compartieron platos dulces y salados preparados por las familias
+            y casi no sobró nada. Cada porción sumó para seguir sosteniendo la comunidad, los intrumentos y materiales
+            para la orquesta.
+          </p>
+          <p>
+            Al cierre del concierto se realizó el <strong>sorteo de los premios</strong> previstos: hubo regalos especiales
+            y una <strong>camiseta original de Nueva Chicago</strong> que se fue a casa de una familia del barrio, entre aplausos
+            y festejos.
+          </p>
+          <p class="small-muted mb-0">
+            Como siempre, el detalle se compartió con las familias, manteniendo
+            el compromiso de <strong>trabajo en comunidad</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="section-muted py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <span class="pill mb-2">Escuela pública y barrio</span>
+          <h2 class="h3 fw-bold mb-3">¿Dónde fue el concierto?</h2>
+          <p>
+            El cierre de año se realizó en la <strong>Escuela Nº 19 D.E. 20</strong>, en el corazón de Mataderos,
+            la casa de la orquesta y el lugar donde cada semana se construye música pública y gratuita.
+          </p>
+          <ul class="list-unstyled mb-3">
+            <li>📍 <strong>Escuela Nº 19 D.E. 20 — Mataderos</strong></li>
+            <li>🗓️ <strong>Sábado 6 de diciembre</strong></li>
+            <li>🕒 Jornada de cierre de clases con concierto en el patio</li>
+            <li>🎟️ <strong>Entrada libre y gratuita</strong></li>
+          </ul>
+          <p class="mb-0">
+            La escuela, la orquesta y las familias mostraron una vez más que cuando el barrio se organiza,
+            <strong>la cultura llega a todos</strong>.
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="ratio ratio-4x3 rounded overflow-hidden border">
+            <iframe
+              title="Escuela 19 D.E. 20 — Mataderos"
+              src="https://www.google.com/maps?q=Escuela+19+DE+20+Mataderos+Buenos+Aires&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="border:0;"></iframe>
+          </div>
+          <div class="mt-2">
+            <a class="small text-decoration-none" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&query=Escuela+19+DE+20+Mataderos+Buenos+Aires">
+              Ver el lugar en Google Maps ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGROS DEL AÑO -->
+  <section id="logros" class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+      <div>
+        <span class="year-pill">Año 2025</span>
+        <h2 class="h4 fw-bold mt-2 mb-0">Un año lleno de música y escenarios</h2>
+      </div>
+      <div class="small-muted">
+        Este concierto cerró un recorrido por teatros, museos, polideportivos y escuelas.
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft h-100">
+          <h3 class="h6 text-uppercase text-muted mb-1">Teatro El Plata</h3>
+          <p class="mb-2">
+            La orquesta volvió al <strong>Teatro El Plata</strong> con un programa que mezcló música académica
+            y popular, mostrando el trabajo de todo el año en uno de los escenarios más queridos del barrio.
+          </p>
+          <a class="small text-decoration-none" href="./concierto_teatro_elplata.html">Ver recuerdo del concierto ↗</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft h-100">
+          <h3 class="h6 text-uppercase text-muted mb-1">Polideportivo Nueva Chicago</h3>
+          <p class="mb-2">
+            En el marco de <strong>La Noche de los Museos</strong>, el poli se vistió de verde y negro para recibir a la orquesta,
+            las tribunas, las familias y las hinchadas del barrio.
+          </p>
+          <a class="small text-decoration-none" href="./concierto_polideportivo_chicago.html">Ver crónica en el poli ↗</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft h-100">
+          <h3 class="h6 text-uppercase text-muted mb-1">Museo de Arte Moderno</h3>
+          <p class="mb-2">
+            Un concierto rodeado de obras de arte en <strong>San Telmo</strong>, uniendo escuela pública y museo
+            en una misma sala llena de música y aplausos.
+          </p>
+          <a class="small text-decoration-none" href="./concierto_museo_moderno.html">Ver concierto en el museo ↗</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft h-100">
+          <h3 class="h6 text-uppercase text-muted mb-1">Cierre en la escuela</h3>
+          <p class="mb-2">
+            El último concierto del año, en casa: patio lleno, feria del plato, sorteos y un gran abrazo colectivo
+            para despedir el ciclo.
+          </p>
+          <span class="small-muted">Estás viendo este concierto.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARTIR EL RECUERDO -->
+  <section id="compartir" class="section-muted py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="h4 fw-bold mb-3">Compartí el recuerdo</h2>
+          <p>
+            Si conocés a alguien que haya estado en el concierto —o que quiera conocer el trabajo de la orquesta—
+            podés enviarle este sitio. Cada visita ayuda a seguir difundiendo la <strong>música pública y gratuita</strong>
+            que se construye en Mataderos.
+          </p>
+          <p class="mb-0">
+            Compartilo por WhatsApp, Telegram, redes sociales o mostrá el código QR para que lo escaneen con el celular.
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-soft h-100">
+            <div class="row g-3">
+              <div class="col-sm-5">
+                <img
+                  id="qrImg"
+                  src="https://quickchart.io/qr?text=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2Fconcierto_cierre_escuela.html&size=300"
+                  srcset="https://quickchart.io/qr?text=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2Fconcierto_cierre_escuela.html&size=600 2x"
+                  alt="QR concierto de cierre en la escuela"
+                  style="width:100%; aspect-ratio:1/1; height:auto;" loading="lazy">
+              </div>
+              <div class="col-sm-7 d-flex flex-column">
+                <div class="d-grid gap-2 mb-2" style="grid-template-columns:repeat(2,1fr);display:grid;">
+                  <button class="btn btn-dark btn-sm" id="btnShare">Compartir desde el cel</button>
+                  <button class="btn btn-outline-dark btn-sm" id="btnCopy">Copiar link</button>
+                </div>
+
+                <div class="d-grid gap-2 mb-2" style="grid-template-columns:repeat(4,1fr);display:grid;">
+                  <a class="btn btn-success btn-sm" id="btnWA" target="_blank" rel="noopener">WhatsApp</a>
+                  <a class="btn btn-primary btn-sm" id="btnTG" target="_blank" rel="noopener" style="background:#27A7E7;border-color:#27A7E7">Telegram</a>
+                  <a class="btn btn-outline-primary btn-sm" id="btnFB" target="_blank" rel="noopener">Facebook</a>
+                  <a class="btn btn-outline-dark btn-sm" id="btnX" target="_blank" rel="noopener">X</a>
+                </div>
+
+                <a class="btn btn-outline-secondary btn-sm mb-2" id="btnDL" download="orquesta-mataderos-cierre-escuela-qr.png">
+                  Descargar QR
+                </a>
+
+                <div id="shareMsg" class="small mt-1" style="display:none;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <div>© Orquesta Infantil y Juvenil de Mataderos</div>
+    <div class="d-flex gap-3">
+      <a class="link-light text-decoration-none" href="https://www.instagram.com/orquestamataderos/">Instagram</a>
+      <a class="link-light text-decoration-none" href="https://www.youtube.com/@orquestamataderos">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+  const url   = 'https://orquestademataderos.github.io/orquestamataderos/concierto_cierre_escuela.html';
+  const text  = 'Así vivimos el concierto de cierre de año de la Orquesta de Mataderos en la Escuela Nº 19 D.E. 20 (Mataderos).';
+  const title = 'Concierto de cierre en la escuela • Orquesta de Mataderos';
+
+  const encUrl  = encodeURIComponent(url);
+  const encText = encodeURIComponent(text);
+
+  const btnWA = document.getElementById('btnWA');
+  const btnTG = document.getElementById('btnTG');
+  const btnFB = document.getElementById('btnFB');
+  const btnX  = document.getElementById('btnX');
+  const btnDL = document.getElementById('btnDL');
+  const btnShare = document.getElementById('btnShare');
+  const btnCopy  = document.getElementById('btnCopy');
+  const msg = document.getElementById('shareMsg');
+
+  if(btnWA) btnWA.href = `https://wa.me/?text=${encText}%20${encUrl}`;
+  if(btnTG) btnTG.href = `https://t.me/share/url?url=${encUrl}&text=${encText}`;
+  if(btnFB) btnFB.href = `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`;
+  if(btnX)  btnX.href  = `https://twitter.com/intent/tweet?url=${encUrl}&text=${encText}`;
+  if(btnDL) btnDL.href = `https://quickchart.io/qr?text=${encUrl}&size=1024`;
+
+  if(btnShare){
+    btnShare.addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share({ title, text, url }); }
+        catch(e){ msg.textContent='No se pudo compartir. Probá otra opción.'; msg.style.display='block'; }
+      } else {
+        msg.textContent='Tu navegador no soporta compartir directo. Usá WhatsApp/Telegram o copiá el link.';
+        msg.style.display='block';
+      }
+    });
+  }
+
+  if(btnCopy){
+    btnCopy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        msg.textContent='Link copiado. ¡Pegalo donde quieras!'; msg.style.display='block';
+      } catch(e){
+        const tmp = document.createElement('input'); tmp.value = url;
+        document.body.appendChild(tmp); tmp.select(); document.execCommand('copy'); tmp.remove();
+        msg.textContent='Link copiado (método alternativo).'; msg.style.display='block';
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
