@@ -2,3 +2,7 @@ User-agent: *
 Disallow: /img/
 Disallow: /js/
 Disallow: /css/
+Disallow: /assets/
+Allow: /
+
+Sitemap: https://orquestademataderos.github.io/orquestamataderos/sitemap.xml
