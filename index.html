@@ -3,148 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orquesta de Mataderos • Temporada 2026</title>
+  <title>Orquesta de Mataderos • Ensayos y comunidad 2026</title>
   <meta name="theme-color" content="#0fae7a">
-  <meta name="description" content="Comienza un nuevo año lectivo para la Orquesta Infantil y Juvenil de Mataderos. Primer concierto el 16 de marzo en la Escuela Nº 19 Eva Duarte, como parte de una gira por el barrio.">
-
+  <meta name="description" content="La Orquesta Infantil y Juvenil de Mataderos continúa con sus ensayos semanales en la Escuela Nº 19 Eva Duarte. Próximamente se anunciarán nuevas fechas y conciertos.">
   <link rel="canonical" href="https://orquestademataderos.github.io/orquestamataderos/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Orquesta de Mataderos • Temporada 2026">
-  <meta property="og:description" content="Nuevo año lectivo, comunidad y barrio. Primer concierto el 16 de marzo en la Escuela Nº 19 Eva Duarte.">
+  <meta property="og:title" content="Orquesta de Mataderos • Ensayos y comunidad 2026">
+  <meta property="og:description" content="La orquesta sigue ensayando cada semana, creciendo con el barrio y preparando nuevas presentaciones.">
   <meta property="og:url" content="https://orquestademataderos.github.io/orquestamataderos/">
-  <meta property="og:image" content="img/foto12-1600.jpg">
+  <meta property="og:image" content="img/escuela19-2026-1-1600.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Orquesta de Mataderos • Temporada 2026">
-  <meta name="twitter:description" content="La orquesta vuelve a encontrarse con el barrio. Primer concierto el 16 de marzo en la Escuela Nº 19 Eva Duarte.">
-  <meta name="twitter:image" content="img/foto12-1600.jpg">
-
+  <meta name="twitter:title" content="Orquesta de Mataderos • Ensayos y comunidad 2026">
+  <meta name="twitter:description" content="Ensayos semanales, comunidad y nuevas fechas por anunciar.">
+  <meta name="twitter:image" content="img/escuela19-2026-1-1600.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --green:#0fae7a;
-      --green-700:#0a7a57;
-      --green-soft:#e9f8f2;
-      --black:#0e0e0e;
-      --white:#ffffff;
-      --muted:#f4f6f7;
-      --text:#1f2933;
-    }
+    :root{--green:#0fae7a;--green-700:#0a7a57;--green-soft:#e9f8f2;--black:#0e0e0e;--muted:#f4f6f7;--text:#1f2933}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:#fff;
-      color:var(--text);
-      letter-spacing:.02em;
-    }
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fff;color:var(--text);letter-spacing:.02em}
     .navbar{background:rgba(14,14,14,.96);backdrop-filter:blur(8px)}
-    .navbar-brand,.nav-link{color:#fff!important}
-    .nav-link:hover,.nav-link:focus{color:var(--green)!important}
-    .dropdown-menu{border-radius:1rem;border:1px solid rgba(0,0,0,.08)}
-    .btn-brand{
-      background:var(--green);
-      color:#fff;
-      border:0;
-      border-radius:.85rem;
-      font-weight:700;
-      padding:.85rem 1.2rem;
-    }
-    .btn-brand:hover,.btn-brand:focus{background:var(--green-700);color:#fff}
-    .btn-outline-brand{
-      border:1px solid rgba(255,255,255,.45);
-      color:#fff;
-      border-radius:.85rem;
-      font-weight:600;
-      padding:.85rem 1.2rem;
-    }
-    .btn-outline-brand:hover,.btn-outline-brand:focus{background:#fff;color:var(--black)}
+    .navbar-brand,.nav-link{color:#fff!important}.nav-link:hover,.nav-link:focus{color:var(--green)!important}
+    .btn-brand{background:var(--green);color:#fff;border:0;border-radius:.85rem;font-weight:700;padding:.85rem 1.2rem}.btn-brand:hover,.btn-brand:focus{background:var(--green-700);color:#fff}
+    .btn-outline-brand{border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:.85rem;font-weight:600;padding:.85rem 1.2rem}.btn-outline-brand:hover,.btn-outline-brand:focus{background:#fff;color:var(--black)}
     .section-muted{background:var(--muted)}
-    .card-soft{
-      background:#fff;
-      border:1px solid rgba(0,0,0,.06);
-      border-radius:1.25rem;
-      padding:1.6rem;
-      box-shadow:0 12px 32px rgba(0,0,0,.04);
-    }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-      font-size:.78rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      padding:.38rem .85rem;
-      border-radius:999px;
-      background:rgba(15,174,122,.14);
-      color:var(--green-700);
-    }
-    .hero{
-      position:relative;
-      overflow:hidden;
-      color:#fff;
-      background:#101618;
-      padding:4.5rem 0 4rem;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(135deg, rgba(7,12,10,.82), rgba(7,12,10,.68)),
-        radial-gradient(circle at top left, rgba(15,174,122,.55), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(255,255,255,.12), transparent 28%);
-      z-index:1;
-    }
-    .hero-bg,.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .hero-inner{position:relative;z-index:2}
-    .hero h1{
-      font-weight:800;
-      line-height:1.02;
-      font-size:clamp(2.3rem,4vw,4rem);
-      text-transform:uppercase;
-      letter-spacing:.04em;
-    }
+    .card-soft{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:1.25rem;padding:1.6rem;box-shadow:0 12px 32px rgba(0,0,0,.04)}
+    .tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:.38rem .85rem;border-radius:999px;background:rgba(15,174,122,.14);color:var(--green-700)}
+    .hero{position:relative;overflow:hidden;color:#fff;background:#101618;padding:4.5rem 0 4rem}.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,12,10,.82),rgba(7,12,10,.68)),radial-gradient(circle at top left, rgba(15,174,122,.55), transparent 34%),radial-gradient(circle at bottom right, rgba(255,255,255,.12), transparent 28%);z-index:1}
+    .hero-bg,.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-inner{position:relative;z-index:2}
+    .hero h1{font-weight:800;line-height:1.02;font-size:clamp(2.3rem,4vw,4rem);text-transform:uppercase;letter-spacing:.04em}
     .hero p.lead{max-width:44rem;color:rgba(255,255,255,.92)}
-    .hero-panel{
-      background:rgba(255,255,255,.1);
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:1.2rem;
-      padding:1.25rem;
-      backdrop-filter:blur(6px);
-    }
-    .info-list{list-style:none;padding:0;margin:0}
-    .info-list li+li{margin-top:.45rem}
-    .media-16x9{position:relative;width:100%;aspect-ratio:16/9;border-radius:1rem;overflow:hidden;background:#000}
-    .media-16x9 img{width:100%;height:100%;display:block;object-fit:cover}
-    .event-card{
-      background:linear-gradient(180deg,#fff,#f8fbfa);
-      border:1px solid rgba(15,174,122,.14);
-      border-radius:1.3rem;
-      overflow:hidden;
-      box-shadow:0 16px 40px rgba(15,174,122,.08);
-    }
-    .event-card .body{padding:1.6rem}
+    .hero-panel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:1.2rem;padding:1.25rem;backdrop-filter:blur(6px)}
+    .media-16x9{position:relative;width:100%;aspect-ratio:16/9;border-radius:1rem;overflow:hidden;background:#000}.media-16x9 img{width:100%;height:100%;display:block;object-fit:cover}
+    .event-card{background:linear-gradient(180deg,#fff,#f8fbfa);border:1px solid rgba(15,174,122,.14);border-radius:1.3rem;overflow:hidden;box-shadow:0 16px 40px rgba(15,174,122,.08)}.event-card .body{padding:1.6rem}
     .icon-bullet{width:2.3rem;height:2.3rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--green-soft);color:var(--green-700);font-weight:700}
-    .timeline{position:relative;padding-left:1.6rem}
-    .timeline::before{content:"";position:absolute;left:.38rem;top:0;bottom:0;width:2px;background:rgba(15,174,122,.18)}
-    .timeline-item{position:relative;padding-bottom:1.4rem}
-    .timeline-item:last-child{padding-bottom:0}
-    .timeline-item::before{content:"";position:absolute;left:-1.38rem;top:.32rem;width:12px;height:12px;border-radius:999px;background:var(--green);box-shadow:0 0 0 6px rgba(15,174,122,.12)}
-    .share-links a{margin:.2rem}
-    .footer{background:var(--black);color:#fff}
-    .footer a{color:#fff;text-decoration:none}
-    .footer a:hover{color:#8ff0ca}
-    @media (max-width: 991.98px){
-      .hero{text-align:center}
-      .hero p.lead{margin-inline:auto}
-    }
+    .timeline{position:relative;padding-left:1.6rem}.timeline::before{content:"";position:absolute;left:.38rem;top:0;bottom:0;width:2px;background:rgba(15,174,122,.18)}.timeline-item{position:relative;padding-bottom:1.4rem}.timeline-item:last-child{padding-bottom:0}.timeline-item::before{content:"";position:absolute;left:-1.38rem;top:.32rem;width:12px;height:12px;border-radius:999px;background:var(--green);box-shadow:0 0 0 6px rgba(15,174,122,.12)}
+    .share-links a,.share-links button{margin:.2rem}.footer{background:var(--black);color:#fff}.footer a{color:#fff;text-decoration:none}.footer a:hover{color:#8ff0ca}
+    .schedule-list li+li{margin-top:.35rem}.quote-box{border-left:4px solid var(--green);padding-left:1rem}
+    @media (max-width:991.98px){.hero{text-align:center}.hero p.lead{margin-inline:auto}}
+    .gallery-thumb{
+  width:100%;
+  aspect-ratio: 1/1; /* todas cuadradas */
+  object-fit: cover;
+  border-radius:.5rem;
+}
   </style>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">Orquesta Mataderos</a>
@@ -154,256 +60,166 @@
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#primer-concierto">Primer concierto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#comunidad">Comunidad</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ultimo-concierto">Último concierto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ensayos">Ensayos</a></li>
         <li class="nav-item"><a class="nav-link" href="conciertos.html">Conciertos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#difusion">Difusión</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sumate">Sumate</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 <header id="inicio" class="hero">
   <picture class="hero-bg" aria-hidden="true">
-    <source srcset="./img/foto12-1600.jpg" media="(min-width: 992px)">
-    <source srcset="./img/foto12-960.jpg" media="(min-width: 576px)">
-    <img src="./img/foto12-480.jpg" alt="Orquesta de Mataderos en concierto" loading="eager">
+    <source srcset="./img/escuela19-2026-1-1600.jpg" media="(min-width: 992px)">
+    <source srcset="./img/escuela19-2026-1-960.jpg" media="(min-width: 576px)">
+    <img src="./img/escuela19-2026-1-480.jpg" alt="Orquesta de Mataderos tocando en la Escuela Nº 19 Eva Duarte" loading="eager">
   </picture>
-
   <div class="container hero-inner">
     <div class="row g-4 align-items-center">
       <div class="col-lg-7">
-        <span class="tag mb-3">Temporada 2026 • Nuevo año lectivo</span>
-        <h1 class="mb-3">La orquesta vuelve a encontrarse con el barrio</h1>
+        <span class="tag mb-3">Temporada 2026 • Ensayos en marcha</span>
+        <h1 class="mb-3">La orquesta sigue sonando en la escuela y en el barrio</h1>
         <p class="lead mb-4">
-          Comienza un nuevo año para la <strong>Orquesta Infantil y Juvenil de Mataderos</strong>: un año para volver a ensayar, aprender, compartir y llevar la música a más rincones del barrio junto a familias, profes, alumnos y vecinos.
+          La <strong>Orquesta Infantil y Juvenil de Mataderos</strong> continúa su año con ensayos semanales, trabajo compartido y el mismo compromiso de siempre con la escuela pública, las familias, los profes y los chicos y chicas que la hacen crecer.
         </p>
         <p class="mb-4" style="max-width:42rem;color:rgba(255,255,255,.86)">
-          El primer paso de este recorrido será el <strong>16 de marzo</strong>, con un concierto especial en la <strong>Escuela Nº 19 D.E. 20 Eva Duarte</strong>, como inicio de una gira barrial que buscará afianzar el vínculo de la orquesta con su comunidad.
+          Después de una presentación muy significativa en la <strong>Escuela Nº 19 Eva Duarte</strong>, la orquesta sigue preparando nuevas actividades. <strong>Próximamente se anunciarán nuevas fechas de conciertos y eventos</strong>, mientras la música continúa cada semana en la escuela.
         </p>
         <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
-          <a href="#primer-concierto" class="btn btn-brand">Ver primer concierto</a>
-          <a href="conciertos.html" class="btn btn-outline-brand">Recorrer conciertos</a>
+          <a href="#ensayos" class="btn btn-brand">Ver ensayos</a>
+          <a href="conciertos.html" class="btn btn-outline-brand">Ver conciertos</a>
         </div>
       </div>
       <div class="col-lg-5">
         <div class="hero-panel">
           <div class="small text-uppercase fw-semibold mb-2" style="letter-spacing:.16em;color:rgba(255,255,255,.78)">Nuestra orquesta, nuestro barrio</div>
           <p class="mb-0">
-            La orquesta no es solamente un escenario: es trabajo colectivo, pertenencia, escuela pública y barrio. Cada ensayo y cada concierto son una forma de decir que la música también construye comunidad.
+            Cada ensayo es una construcción colectiva. La orquesta se sostiene con el esfuerzo de chicos y chicas, el acompañamiento de las familias y el trabajo cotidiano de docentes y comunidad.
           </p>
         </div>
       </div>
     </div>
   </div>
 </header>
-
 <main>
-  <section id="primer-concierto" class="py-5">
-  <div class="container">
-    <div class="row g-4 align-items-stretch concierto-layout">
-      
-      <div class="col-xl-7 col-lg-7">
-        <span class="tag mb-2 d-inline-block">Primer concierto del año</span>
-
-        <div class="event-card h-100 concierto-main-card">
-          <div class="media-16x9 concierto-media">
-            <img src="./img/foto19-960.jpg" alt="Orquesta de Mataderos en la escuela" loading="lazy">
-          </div>
-
-          <div class="body">
-  <h2 class="h3 fw-bold mb-3">16 de marzo • Escuela Nº 19 Eva Duarte</h2>
-
-  <p>
-    La temporada 2026 de la Orquesta Infantil y Juvenil de Mataderos comenzará con un concierto muy especial junto a la comunidad del barrio. Ese día acompañaremos un momento significativo para la Escuela Nº 19 del Distrito Escolar 20, que recupera su nombre y pasa a llamarse <strong>Escuela Eva Duarte</strong>.
-  </p>
-
-  <p>
-    El encuentro se realizará en la propia escuela, ubicada en <strong>Cosquín 3100, en el barrio de Mataderos</strong>, y será una oportunidad para compartir música, celebrar este nuevo comienzo y encontrarnos con vecinos, familias y estudiantes de la comunidad educativa.
-  </p>
-
-  <p class="mb-0">
-    Este concierto marcará además el inicio de una <strong>serie de presentaciones de la orquesta en distintos espacios del barrio</strong> durante el año, acercando la música a la comunidad y fortaleciendo el trabajo conjunto entre alumnos, docentes, familias y vecinos.
-  </p>
-</div>
-        </div>
-      </div>
-
-   <div class="col-xl-5 col-lg-5">
-  <div class="card-soft h-100 share-card concierto-share-card">
-
-    <div class="d-flex align-items-center gap-2 mb-3">
-      <span class="icon-bullet">QR</span>
-      <h3 class="h5 fw-bold mb-0">Compartí el evento</h3>
-    </div>
-
-    <p class="small mb-3">
-      Escaneá el QR o compartilo directamente en redes para invitar a vecinos y familias al primer concierto del año.
-    </p>
-
-    <div class="text-center mb-3 qr-wrap">
-      <img
-        src="./img/qr-escuela19-eva-duarte.png"
-        alt="QR de ubicación del próximo concierto"
-        class="img-fluid qr-img"
-        loading="lazy"
-      >
-    </div>
-
-    <ul class="list-unstyled small mb-3 event-data">
-      <li><strong>Fecha:</strong> 16 de marzo de 2026 a las 9 hs</li>
-      <li><strong>Lugar:</strong> Escuela Nº 19 D.E. 20 Eva Duarte</li>
-      <li><strong>Dirección:</strong> Cosquín 3100, Mataderos</li>
-      <li><strong>Evento:</strong> Inicio de la gira barrial 2026</li>
-    </ul>
-
-    <div class="share-box">
-      <div class="share-main-actions">
-        <button
-          class="btn btn-brand btn-share-main"
-          type="button"
-          onclick="compartirEvento()"
-        >
-          Compartir ahora
-        </button>
-
-        <a
-          class="btn btn-outline-dark btn-share-main"
-          target="_blank"
-          rel="noopener"
-          href="https://www.google.com/maps/search/?api=1&query=Escuela+N%C2%BA+19+DE+20+Cosqu%C3%ADn+3100+Mataderos+Buenos+Aires"
-        >
-          Ver mapa
-        </a>
-      </div>
-
-      <div id="difusion" class="share-links">
-        <a
-          class="btn btn-success btn-sm"
-          target="_blank"
-          rel="noopener"
-          href="https://wa.me/?text=Primer%20concierto%202026%20de%20la%20Orquesta%20Infantil%20y%20Juvenil%20de%20Mataderos.%20%F0%9F%93%85%2016%20de%20marzo%20de%202026.%20%F0%9F%93%8D%20Escuela%20N%C2%BA%2019%20Eva%20Duarte,%20Cosqu%C3%ADn%203100,%20Mataderos.%20Inicio%20de%20la%20gira%20barrial%202026.%20M%C3%A1s%20info%3A%20https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23primer-concierto"
-        >
-          WhatsApp
-        </a>
-
-        <a
-          class="btn btn-primary btn-sm"
-          target="_blank"
-          rel="noopener"
-          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23primer-concierto"
-        >
-          Facebook
-        </a>
-
-        <a
-          class="btn btn-dark btn-sm"
-          target="_blank"
-          rel="noopener"
-          href="https://twitter.com/intent/tweet?text=Primer%20concierto%202026%20de%20la%20Orquesta%20Infantil%20y%20Juvenil%20de%20Mataderos.%20%2016%20de%20marzo%20-%20Escuela%20N%C2%BA%2019%20Eva%20Duarte,%20Mataderos.&url=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23primer-concierto"
-        >
-          X / Twitter
-        </a>
-
-        <a
-          class="btn btn-info btn-sm"
-          target="_blank"
-          rel="noopener"
-          href="https://t.me/share/url?url=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23primer-concierto&text=Primer%20concierto%202026%20de%20la%20Orquesta%20Infantil%20y%20Juvenil%20de%20Mataderos.%2016%20de%20marzo.%20Escuela%20N%C2%BA%2019%20Eva%20Duarte,%20Mataderos."
-        >
-          Telegram
-        </a>
-
-        <button
-          class="btn btn-outline-dark btn-sm"
-          type="button"
-          onclick="copiarLinkEvento()"
-        >
-          Copiar link
-        </button>
-
-        <button
-          class="btn btn-outline-dark btn-sm"
-          type="button"
-          onclick="copiarTextoEvento()"
-        >
-          Copiar texto
-        </button>
-
-        <button
-          class="btn btn-outline-dark btn-sm"
-          type="button"
-          onclick="abrirInstagram()"
-        >
-          Instagram
-        </button>
-
-        <button
-          class="btn btn-outline-dark btn-sm"
-          type="button"
-          onclick="abrirTikTok()"
-        >
-          TikTok
-        </button>
-      </div>
-    </div>
-
-    <p class="small text-muted mt-3 mb-2">
-      Invitá a vecinos, familias y amigos a este concierto que abre el año musical de la orquesta.
-    </p>
-
-    <p id="copiadoMsg" class="small text-success mt-2 mb-0 d-none"></p>
-  </div>
-</div>
-
-    </div>
-  </div>
-</section>
-
-  <section class="section-muted py-5">
+  <section id="ultimo-concierto" class="py-5">
     <div class="container">
       <div class="row g-4 align-items-stretch">
-        <div class="col-lg-6">
-          <div class="card-soft h-100">
-            <span class="tag mb-2">Barrio y pertenencia</span>
-            <h2 class="h4 fw-bold mb-3">La música como forma de comunidad</h2>
-            <p>
-              La Orquesta Infantil y Juvenil de Mataderos vuelve a empezar el año con la misma esencia que la identifica: escuela pública, trabajo en equipo, acompañamiento de las familias y un fuerte vínculo con el barrio.
-            </p>
-            <p>
-              Este 2026 la propuesta es salir todavía más al encuentro de la comunidad, con conciertos en escuelas, instituciones y espacios barriales para que la orquesta siga siendo parte viva de Mataderos.
-            </p>
-            <p class="mb-0">
-              Cada presentación será una invitación a escuchar, a participar y a reconocer que detrás de cada chico y cada instrumento hay un entramado de profes, madres, padres, hermanos, cooperadora y vecinos sosteniendo el proyecto.
-            </p>
+        <div class="col-xl-7 col-lg-7">
+          <span class="tag mb-2 d-inline-block">Último concierto</span>
+          <div class="event-card h-100">
+            <div class="media-16x9">
+              <img src="./img/escuela19-2026-1-960.jpg" alt="Orquesta de Mataderos durante el concierto en la Escuela Nº 19 Eva Duarte" loading="lazy">
+            </div>
+            <div class="body">
+              <h2 class="h3 fw-bold mb-3">Escuela Nº 19 Eva Duarte • Un concierto que quedó en la memoria de la escuela</h2>
+              <p>
+                La última presentación de la orquesta reunió a chicos y chicas, familias, docentes y vecinos en una jornada muy especial dentro de la <strong>Escuela Nº 19 D.E. 20 Eva Duarte</strong>. La música volvió a ocupar un lugar central en la vida de la escuela y del barrio, con los alumnos de la orquesta como protagonistas de un encuentro profundamente comunitario.
+              </p>
+              <p>
+                Para la orquesta tuvo además un valor muy propio: no fue tocar en cualquier escenario, sino hacerlo en <strong>la misma escuela donde ensaya, aprende y crece cada semana</strong>. Esa cercanía entre concierto, escuela y comunidad hizo que el momento se viviera con mucha pertenencia y emoción.
+              </p>
+              <p>
+                Ahora ese concierto ya forma parte del historial del sitio y puede recorrerse con nuevas fotos del evento, una crónica del día y accesos a los canales donde se seguirán anunciando próximas actividades.
+              </p>
+        <div class="row g-2 mt-1">
+  <div class="col-4">
+    <img src="./img/escuela19-2026-2-480.jpg"
+         class="gallery-thumb"
+         alt="Concierto orquesta vista general"
+         loading="lazy">
+  </div>
+
+  <div class="col-4">
+    <img src="./img/escuela19-2026-3-480.jpg"
+         class="gallery-thumb"
+         alt="Orquesta en escena"
+         loading="lazy">
+  </div>
+
+  <div class="col-4">
+    <img src="./img/escuela19-2026-4-480.jpg"
+         class="gallery-thumb"
+         alt="Público y comunidad"
+         loading="lazy">
+  </div>
+</div>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="card-soft h-100">
-            <span class="tag mb-2">Camino 2026</span>
-            <h2 class="h4 fw-bold mb-3">Una gira que empieza en la escuela y sigue por el barrio</h2>
-            <div class="timeline">
-              <div class="timeline-item">
-                <h3 class="h6 fw-bold mb-1">16 de marzo</h3>
-                <p class="small mb-0">Concierto en la Escuela Nº 19 Eva Duarte como apertura del año lectivo y de la temporada musical.</p>
-              </div>
-              <div class="timeline-item">
-                <h3 class="h6 fw-bold mb-1">Primer semestre</h3>
-                <p class="small mb-0">Nuevos conciertos en espacios de Mataderos para acercar la orquesta a más vecinos y reforzar la pertenencia barrial.</p>
-              </div>
-              <div class="timeline-item">
-                <h3 class="h6 fw-bold mb-1">Durante todo el año</h3>
-                <p class="small mb-0">Ensayos, aprendizajes, encuentros y nuevas presentaciones con protagonismo de alumnos, profes y familias.</p>
-              </div>
+        <div class="col-xl-5 col-lg-5">
+          <div class="card-soft h-100 d-flex flex-column">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="icon-bullet">OK</span>
+              <h3 class="h5 fw-bold mb-0">Seguimos sumando al historial</h3>
             </div>
-            <a href="conciertos.html" class="btn btn-brand btn-sm mt-3">Ver conciertos ya cargados</a>
+            <p class="small mb-3">
+              El concierto de la Escuela Nº 19 Eva Duarte ya se encuentra incorporado a la sección de conciertos, junto con el resto del recorrido de la orquesta.
+            </p>
+            <ul class="list-unstyled small mb-4 schedule-list">
+              <li><strong>Fecha del evento:</strong> marzo de 2026</li>
+              <li><strong>Lugar:</strong> Escuela Nº 19 D.E. 20 Eva Duarte</li>
+              <li><strong>Dirección:</strong> Cosquín 3100, Mataderos</li>
+              
+            </ul>
+            <div class="d-grid gap-2 mt-auto">
+              <a href="concierto_escuela19_eva_duarte_2026.html" class="btn btn-brand">Abrir registro del concierto</a>
+              <a href="conciertos.html" class="btn btn-outline-secondary">Ver todos los conciertos</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <section id="comunidad" class="py-5">
+  <section id="ensayos" class="section-muted py-5">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6">
+          <div class="card-soft h-100">
+            <span class="tag mb-2">Ensayos semanales</span>
+            <h2 class="h4 fw-bold mb-3">La actividad sigue cada semana</h2>
+            <p>
+              Aunque todavía no hay nuevas fechas públicas confirmadas, la orquesta <strong>sigue activa y ensayando</strong>. Los chicos y chicas continúan trabajando repertorio, técnica, escucha grupal y preparación musical junto a sus profes.
+            </p>
+            <div class="quote-box my-3">
+              <p class="mb-1"><strong>Escuela Nº 19 Eva Duarte — Los Perales, Mataderos</strong></p>
+              <p class="small mb-0">La escuela sigue siendo casa, punto de encuentro y espacio de aprendizaje para la orquesta.</p>
+            </div>
+            <ul class="small mb-0 schedule-list">
+              <li><strong>Martes, miércoles y jueves:</strong> 16:30 a 18:30 hs</li>
+              <li><strong>Sábados:</strong> 14:00 a 17:45 hs</li>
+              <li><strong>Actividades:</strong> instrumento, lenguaje musical, ensayos y trabajo colectivo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card-soft h-100">
+            <span class="tag mb-2">Próximamente</span>
+            <h2 class="h4 fw-bold mb-3">Las nuevas fechas se anunciarán por estos canales</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3 class="h6 fw-bold mb-1">Instagram</h3>
+                <p class="small mb-0">Novedades rápidas, registros del día a día y avisos de conciertos, encuentros y actividades.</p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="h6 fw-bold mb-1">YouTube</h3>
+                <p class="small mb-0">Videos y registros que ayudan a mostrar el trabajo musical de la orquesta y su recorrido.</p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="h6 fw-bold mb-1">Escuela y comunidad</h3>
+                <p class="small mb-0">La información también circula en la escuela, entre las familias y en el propio barrio.</p>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a href="https://www.instagram.com/orquestamataderos/" target="_blank" rel="noopener" class="btn btn-brand btn-sm">Abrir Instagram</a>
+              <a href="https://www.youtube.com/@OrquestaMataderos" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">Abrir YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5" id="comunidad">
     <div class="container">
       <div class="row g-4 align-items-center">
         <div class="col-lg-5">
@@ -416,299 +232,82 @@
         </div>
         <div class="col-lg-7">
           <span class="tag mb-2">Trabajo colectivo</span>
-          <h2 class="h4 fw-bold mb-3">Familias, profes, alumnos y barrio</h2>
+          <h2 class="h4 fw-bold mb-3">Chicos y chicas en el centro del proyecto</h2>
           <p>
-            La orquesta es un proyecto que se construye entre muchos. Hay música, sí, pero también hay tiempo compartido, organización, constancia, viajes, instrumentos, esfuerzo y un montón de tareas invisibles que hacen posible cada concierto.
+            La orquesta se sostiene en torno a la participación de los niños, niñas y jóvenes que cada semana vuelven a encontrarse con sus instrumentos, con sus profes y con sus compañeros. Ellos y ellas son el corazón de este proyecto.
           </p>
           <p>
-            En ese sentido, el sitio también busca invitar a recorrer los conciertos ya cargados del año pasado, para reconocer el camino hecho y preparar el que empieza ahora. La memoria de lo vivido también fortalece el presente.
+            A su alrededor hay una red que acompaña: familias, docentes, auxiliares, escuela, barrio y comunidad. Ese entramado es el que hace posible que la orquesta no sea solo una actividad, sino una experiencia de pertenencia y crecimiento.
           </p>
           <p class="mb-0">
-            2026 abre una nueva etapa: más presencia en el barrio, más circulación de la orquesta por la comunidad y más oportunidades para que nuevas familias se acerquen y se sientan parte.
+            Por eso este sitio sigue activo aun cuando no haya fechas nuevas definidas: porque el trabajo continúa y porque cada ensayo también forma parte de la historia de la orquesta.
           </p>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section-muted py-5">
+  <section id="sumate" class="section-muted py-5">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4">
           <div class="card-soft h-100">
             <span class="tag mb-2">Conciertos</span>
-            <h3 class="h5 fw-bold mb-2">Recorré lo que ya pasó</h3>
+            <h3 class="h5 fw-bold mb-2">Recorré el historial</h3>
             <p class="small mb-3">
-              Entrá a la sección de conciertos para volver a ver presentaciones del año pasado y anticipar las nuevas fechas de esta temporada.
+              La sección de conciertos sigue creciendo con fotos, crónicas y registros de los momentos más importantes de la orquesta.
             </p>
             <a href="conciertos.html" class="btn btn-brand btn-sm">Ir a conciertos</a>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="card-soft h-100">
-            <span class="tag mb-2">YouTube</span>
-            <h3 class="h5 fw-bold mb-2">Compartí la música</h3>
+            <span class="tag mb-2">Canales</span>
+            <h3 class="h5 fw-bold mb-2">Difundí la orquesta</h3>
             <p class="small mb-3">
-              Los registros audiovisuales ayudan a que más personas conozcan la orquesta y acompañen su crecimiento.
+              Compartir el sitio, el Instagram y el canal de YouTube ayuda a que más vecinos conozcan el trabajo de los chicos y chicas y acompañen a la orquesta.
             </p>
-            <a href="https://www.youtube.com/@OrquestaMataderos" target="_blank" rel="noopener" class="btn btn-brand btn-sm">Abrir YouTube</a>
+            <a href="https://www.instagram.com/orquestamataderos/" target="_blank" rel="noopener" class="btn btn-brand btn-sm">Seguir en Instagram</a>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="card-soft h-100">
-            <span class="tag mb-2">Instagram</span>
-            <h3 class="h5 fw-bold mb-2">Seguí las novedades</h3>
+            <span class="tag mb-2">Sumate</span>
+            <h3 class="h5 fw-bold mb-2">¿Querés participar?</h3>
             <p class="small mb-3">
-              Fotos, historias y movimiento cotidiano de la orquesta para sostener el vínculo con la comunidad.
+              Los niños y niñas que quieran acercarse a la orquesta pueden consultar por Instagram o directamente en la escuela durante los días de ensayo.
             </p>
-            <a href="https://www.instagram.com/orquestamataderos/" target="_blank" rel="noopener" class="btn btn-brand btn-sm">Abrir Instagram</a>
+            <a href="programa-orquestas.html" class="btn btn-brand btn-sm">Ver información general</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <section class="py-5">
     <div class="container">
       <div class="card-soft text-center">
         <span class="tag mb-2">Mensaje general</span>
-        <h2 class="h4 fw-bold mb-3">Que 2026 nos encuentre haciendo sonar el barrio</h2>
+        <h2 class="h4 fw-bold mb-3">La música sigue haciendo comunidad</h2>
         <p class="mb-2">
-          La orquesta vuelve a empezar con la fuerza de siempre y con nuevos desafíos por delante. Lo que viene no se sostiene solo con partituras: se sostiene con comunidad.
+          La orquesta continúa creciendo gracias a un esfuerzo compartido que vale la pena sostener. Lo que los profes y los chicos construyen cada semana necesita del acompañamiento de toda la comunidad.
         </p>
         <p class="mb-0">
-          Nos vemos en los ensayos, en la escuela, en las calles de Mataderos y en cada concierto que ayude a que más personas sientan a la orquesta como propia.
+          Seguimos ensayando, aprendiendo y preparando lo que viene. Y cuando haya nuevas fechas, este sitio y sus canales las van a anunciar.
         </p>
       </div>
     </div>
   </section>
 </main>
-
 <footer class="footer py-4">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-    <div>© Orquesta Infantil y Juvenil de Mataderos • Temporada 2026</div>
+    <div>© Orquesta Infantil y Juvenil de Mataderos • 2026</div>
     <div class="d-flex gap-3 flex-wrap justify-content-center">
       <a href="conciertos.html">Conciertos</a>
+      <a href="programa-orquestas.html">Programa</a>
       <a href="https://www.instagram.com/orquestamataderos/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@OrquestaMataderos" target="_blank" rel="noopener">YouTube</a>
     </div>
   </div>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  function copiarTextoEvento(){
-    const texto = 'Primer concierto 2026 de la Orquesta de Mataderos. 16 de marzo en la Escuela Nº 19 Eva Duarte, Cosquín 3100, Mataderos. Inicio de la gira de la orquesta por el barrio.';
-    navigator.clipboard.writeText(texto).then(function(){
-      document.getElementById('copiadoMsg').classList.remove('d-none');
-      setTimeout(function(){
-        document.getElementById('copiadoMsg').classList.add('d-none');
-      }, 2500);
-    });
-  }
-  <script>
-  const EVENTO_URL = "https://orquestademataderos.github.io/orquestamataderos/#primer-concierto";
-  const EVENTO_MAPA = "https://www.google.com/maps/search/?api=1&query=Escuela+N%C2%BA+19+DE+20+Cosqu%C3%ADn+3100+Mataderos+Buenos+Aires";
-
-  const EVENTO_TITULO = "Primer concierto 2026 de la Orquesta de Mataderos";
-  const EVENTO_TEXTO = "La Orquesta Infantil y Juvenil de Mataderos comienza su temporada 2026 con su primer concierto el 16 de marzo en la Escuela Nº 19 Eva Duarte, Cosquín 3100, Mataderos. Un encuentro de música, barrio y comunidad.";
-  const EVENTO_TEXTO_LARGO = `${EVENTO_TITULO}\n\n${EVENTO_TEXTO}\n\nUbicación: ${EVENTO_MAPA}\nMás info: ${EVENTO_URL}`;
-
-  function mostrarMensaje(texto, esError = false) {
-    const msg = document.getElementById("copiadoMsg");
-    if (!msg) return;
-
-    msg.textContent = texto;
-    msg.classList.remove("d-none", "text-success", "text-danger");
-    msg.classList.add(esError ? "text-danger" : "text-success");
-
-    clearTimeout(window.__shareMsgTimer);
-    window.__shareMsgTimer = setTimeout(() => {
-      msg.classList.add("d-none");
-    }, 2800);
-  }
-
-  function actualizarLinksCompartir() {
-    const urlActual = window.location.href.includes("#primer-concierto")
-      ? window.location.href
-      : EVENTO_URL;
-
-    const texto = `${EVENTO_TITULO} - ${EVENTO_TEXTO} ${urlActual}`;
-
-    const wa = document.getElementById("shareWhatsapp");
-    const fb = document.getElementById("shareFacebook");
-    const x = document.getElementById("shareX");
-
-    if (wa) {
-      wa.href = `https://wa.me/?text=${encodeURIComponent(texto)}`;
-    }
-
-    if (fb) {
-      fb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlActual)}`;
-    }
-
-    if (x) {
-      x.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(EVENTO_TITULO)}&url=${encodeURIComponent(urlActual)}`;
-    }
-  }
-
-  async function compartirEvento() {
-    const shareData = {
-      title: EVENTO_TITULO,
-      text: EVENTO_TEXTO,
-      url: window.location.href.includes("#primer-concierto") ? window.location.href : EVENTO_URL
-    };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-        mostrarMensaje("Evento listo para compartir.");
-        return;
-      } catch (error) {
-        if (error && error.name !== "AbortError") {
-          mostrarMensaje("No se pudo abrir el menú de compartir.", true);
-        }
-        return;
-      }
-    }
-
-    try {
-      await navigator.clipboard.writeText(EVENTO_TEXTO_LARGO);
-      mostrarMensaje("Tu navegador no tiene compartir directo. Se copió el texto del evento.");
-    } catch (error) {
-      mostrarMensaje("No se pudo compartir ni copiar automáticamente.", true);
-    }
-  }
-
-  async function copiarTextoEvento() {
-    try {
-      await navigator.clipboard.writeText(EVENTO_TEXTO_LARGO);
-      mostrarMensaje("Texto copiado para compartir.");
-    } catch (error) {
-      mostrarMensaje("No se pudo copiar el texto.", true);
-    }
-  }
-
-  async function copiarLinkEvento() {
-    const link = window.location.href.includes("#primer-concierto")
-      ? window.location.href
-      : EVENTO_URL;
-
-    try {
-      await navigator.clipboard.writeText(link);
-      mostrarMensaje("Link copiado.");
-    } catch (error) {
-      mostrarMensaje("No se pudo copiar el link.", true);
-    }
-  }
-
-  async function abrirInstagram() {
-    try {
-      await navigator.clipboard.writeText(EVENTO_TEXTO_LARGO);
-      mostrarMensaje("Texto copiado. Se abrirá Instagram para que puedas pegarlo en historia, bio o mensaje.");
-    } catch (error) {
-      mostrarMensaje("No se pudo copiar el texto para Instagram.", true);
-    }
-
-    setTimeout(() => {
-      window.open("https://www.instagram.com/", "_blank", "noopener");
-    }, 250);
-  }
-
-  async function abrirTikTok() {
-    try {
-      await navigator.clipboard.writeText(EVENTO_TEXTO_LARGO);
-      mostrarMensaje("Texto copiado. Se abrirá TikTok para que puedas pegarlo en publicación, perfil o mensaje.");
-    } catch (error) {
-      mostrarMensaje("No se pudo copiar el texto para TikTok.", true);
-    }
-
-    setTimeout(() => {
-      window.open("https://www.tiktok.com/", "_blank", "noopener");
-    }, 250);
-  }
-
-  document.addEventListener("DOMContentLoaded", actualizarLinksCompartir);
-</script>
-</script>
-<script>
-  const EVENTO_URL = "https://orquestademataderos.github.io/orquestamataderos/#primer-concierto";
-  const EVENTO_MAPA = "https://www.google.com/maps/search/?api=1&query=Escuela+N%C2%BA+19+DE+20+Cosqu%C3%ADn+3100+Mataderos+Buenos+Aires";
-
-  const EVENTO_TITULO = "Primer concierto 2026 de la Orquesta Infantil y Juvenil de Mataderos";
-  const EVENTO_TEXTO = "16 de marzo de 2026 en la Escuela Nº 19 Eva Duarte, Cosquín 3100, Mataderos. Inicio de la gira barrial 2026.";
-  const EVENTO_TEXTO_COMPLETO = `${EVENTO_TITULO}\n${EVENTO_TEXTO}\nMás info: ${EVENTO_URL}\nMapa: ${EVENTO_MAPA}`;
-
-  function mostrarMensaje(texto, error = false) {
-    const msg = document.getElementById("copiadoMsg");
-    if (!msg) return;
-
-    msg.textContent = texto;
-    msg.classList.remove("d-none", "text-success", "text-danger");
-    msg.classList.add(error ? "text-danger" : "text-success");
-
-    setTimeout(() => {
-      msg.classList.add("d-none");
-    }, 2500);
-  }
-
-  async function copiarLinkEvento() {
-    try {
-      await navigator.clipboard.writeText(EVENTO_URL);
-      mostrarMensaje("Link copiado.");
-    } catch (e) {
-      mostrarMensaje("No se pudo copiar el link.", true);
-    }
-  }
-
-  async function copiarTextoEvento() {
-    try {
-      await navigator.clipboard.writeText(EVENTO_TEXTO_COMPLETO);
-      mostrarMensaje("Texto del evento copiado.");
-    } catch (e) {
-      mostrarMensaje("No se pudo copiar el texto.", true);
-    }
-  }
-
-  async function compartirEvento() {
-    const shareData = {
-      title: EVENTO_TITULO,
-      text: EVENTO_TEXTO,
-      url: EVENTO_URL
-    };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-        mostrarMensaje("Evento listo para compartir.");
-        return;
-      } catch (e) {}
-    }
-
-    copiarTextoEvento();
-  }
-
-  async function abrirInstagram() {
-    try {
-      await navigator.clipboard.writeText(EVENTO_TEXTO_COMPLETO);
-      mostrarMensaje("Texto copiado. Pegalo en Instagram.");
-    } catch (e) {
-      mostrarMensaje("No se pudo copiar el texto para Instagram.", true);
-    }
-    setTimeout(() => window.open("https://www.instagram.com/", "_blank", "noopener"), 250);
-  }
-
-  async function abrirTikTok() {
-    try {
-      await navigator.clipboard.writeText(EVENTO_TEXTO_COMPLETO);
-      mostrarMensaje("Texto copiado. Pegalo en TikTok.");
-    } catch (e) {
-      mostrarMensaje("No se pudo copiar el texto para TikTok.", true);
-    }
-    setTimeout(() => window.open("https://www.tiktok.com/", "_blank", "noopener"), 250);
-  }
-</script>
 </body>
 </html>
-
-
