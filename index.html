@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orquesta de Mataderos • Ensayos y comunidad 2026</title>
+  <title>Orquesta de Mataderos • Concierto 2 de mayo en Club Cárdenas</title>
   <meta name="theme-color" content="#0fae7a">
-  <meta name="description" content="La Orquesta Infantil y Juvenil de Mataderos continúa con sus ensayos semanales en la Escuela Nº 19 Eva Duarte. Próximamente se anunciarán nuevas fechas y conciertos.">
+  <meta name="description" content="La Orquesta Infantil y Juvenil de Mataderos se prepara para su próximo concierto el 2 de mayo en el Club Cárdenas de Mataderos.">
   <link rel="canonical" href="https://orquestademataderos.github.io/orquestamataderos/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Orquesta de Mataderos • Ensayos y comunidad 2026">
-  <meta property="og:description" content="La orquesta sigue ensayando cada semana, creciendo con el barrio y preparando nuevas presentaciones.">
+  <meta property="og:title" content="Orquesta de Mataderos • Concierto 2 de mayo en Club Cárdenas">
+  <meta property="og:description" content="Próximo concierto: 2 de mayo en el Club Cárdenas. Música, barrio, familias y comunidad.">
   <meta property="og:url" content="https://orquestademataderos.github.io/orquestamataderos/">
   <meta property="og:image" content="img/escuela19-2026-1-1600.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Orquesta de Mataderos • Ensayos y comunidad 2026">
-  <meta name="twitter:description" content="Ensayos semanales, comunidad y nuevas fechas por anunciar.">
+  <meta name="twitter:title" content="Orquesta de Mataderos • Concierto 2 de mayo en Club Cárdenas">
+  <meta name="twitter:description" content="Próximo concierto el 2 de mayo en Club Cárdenas, Mataderos.">
   <meta name="twitter:image" content="img/escuela19-2026-1-1600.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -42,12 +42,18 @@
     .share-links a,.share-links button{margin:.2rem}.footer{background:var(--black);color:#fff}.footer a{color:#fff;text-decoration:none}.footer a:hover{color:#8ff0ca}
     .schedule-list li+li{margin-top:.35rem}.quote-box{border-left:4px solid var(--green);padding-left:1rem}
     @media (max-width:991.98px){.hero{text-align:center}.hero p.lead{margin-inline:auto}}
-    .gallery-thumb{
-  width:100%;
-  aspect-ratio: 1/1; /* todas cuadradas */
-  object-fit: cover;
-  border-radius:.5rem;
-}
+    .qr-img{max-width:170px;width:100%;height:auto;border-radius:1rem;padding:.55rem;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    .share-actions{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}.share-actions .btn{border-radius:.75rem;font-weight:700}
+    .concert-mini-timeline{position:relative;padding-left:1.5rem}.concert-mini-timeline::before{content:"";position:absolute;left:.35rem;top:.2rem;bottom:.2rem;width:2px;background:rgba(15,174,122,.2)}.concert-mini-timeline .item{position:relative;margin-bottom:1rem}.concert-mini-timeline .item::before{content:"";position:absolute;left:-1.43rem;top:.25rem;width:12px;height:12px;border-radius:999px;background:var(--green);box-shadow:0 0 0 6px rgba(15,174,122,.12)}
+    .event-card .body p{line-height:1.58}
+    .event-media-balanced{aspect-ratio:16/9;max-height:420px}
+    .event-side-card{gap:1rem}
+    .qr-map-grid{display:grid;grid-template-columns:180px 1fr;gap:1rem;align-items:center}
+    .mini-map{width:100%;min-height:170px;border:0;border-radius:1rem;box-shadow:0 10px 24px rgba(0,0,0,.08);background:#e9f8f2}
+    .gallery-row{align-items:stretch}
+    .gallery-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:.65rem;display:block}
+    @media (max-width:1199.98px){.qr-map-grid{grid-template-columns:1fr}.qr-img{max-width:190px}.mini-map{min-height:210px}}
+    @media (max-width:575.98px){.share-actions{grid-template-columns:1fr}.qr-img{max-width:170px}.gallery-thumb{aspect-ratio:1/1}}
   </style>
 </head>
 <body>
@@ -60,7 +66,7 @@
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#ultimo-concierto">Último concierto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#proximo-concierto">Próximo concierto</a></li>
         <li class="nav-item"><a class="nav-link" href="#ensayos">Ensayos</a></li>
         <li class="nav-item"><a class="nav-link" href="conciertos.html">Conciertos</a></li>
         <li class="nav-item"><a class="nav-link" href="#sumate">Sumate</a></li>
@@ -70,31 +76,31 @@
 </nav>
 <header id="inicio" class="hero">
   <picture class="hero-bg" aria-hidden="true">
-    <source srcset="./img/escuela19-2026-1-1600.jpg" media="(min-width: 992px)">
-    <source srcset="./img/escuela19-2026-1-960.jpg" media="(min-width: 576px)">
-    <img src="./img/escuela19-2026-1-480.jpg" alt="Orquesta de Mataderos tocando en la Escuela Nº 19 Eva Duarte" loading="eager">
+    <source srcset="./img/foto22-1600.jpg" media="(min-width: 992px)">
+    <source srcset="./img/foto22-960.jpg" media="(min-width: 576px)">
+    <img src="./img/foto22-480.jpg" alt="Orquesta de Mataderos tocando en la Escuela Nº 19 Eva Duarte" loading="eager">
   </picture>
   <div class="container hero-inner">
     <div class="row g-4 align-items-center">
       <div class="col-lg-7">
-        <span class="tag mb-3">Temporada 2026 • Ensayos en marcha</span>
-        <h1 class="mb-3">La orquesta sigue sonando en la escuela y en el barrio</h1>
+        <span class="tag mb-3">Próximo concierto • 2 de mayo</span>
+        <h1 class="mb-3">La orquesta llega al Club Cárdenas</h1>
         <p class="lead mb-4">
-          La <strong>Orquesta Infantil y Juvenil de Mataderos</strong> continúa su año con ensayos semanales, trabajo compartido y el mismo compromiso de siempre con la escuela pública, las familias, los profes y los chicos y chicas que la hacen crecer.
+          La <strong>Orquesta Infantil y Juvenil de Mataderos</strong> prepara una nueva presentación en un espacio histórico del barrio: el <strong>Club Cárdenas</strong>, punto de encuentro de generaciones, familias, deporte y vida comunitaria en Mataderos.
         </p>
         <p class="mb-4" style="max-width:42rem;color:rgba(255,255,255,.86)">
-          Después de una presentación muy significativa en la <strong>Escuela Nº 19 Eva Duarte</strong>, la orquesta sigue preparando nuevas actividades. <strong>Próximamente se anunciarán nuevas fechas de conciertos y eventos</strong>, mientras la música continúa cada semana en la escuela.
+          El próximo concierto será el <strong>2 de mayo</strong>, con horario a confirmar, en <strong>Av. Coronel Cárdenas 2920</strong>. Será una nueva oportunidad para encontrarnos, acompañar a los chicos y chicas, y seguir haciendo crecer la orquesta junto a las familias, los profes y el barrio.
         </p>
         <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
-          <a href="#ensayos" class="btn btn-brand">Ver ensayos</a>
+          <a href="#proximo-concierto" class="btn btn-brand">Ver próximo concierto</a>
           <a href="conciertos.html" class="btn btn-outline-brand">Ver conciertos</a>
         </div>
       </div>
       <div class="col-lg-5">
         <div class="hero-panel">
-          <div class="small text-uppercase fw-semibold mb-2" style="letter-spacing:.16em;color:rgba(255,255,255,.78)">Nuestra orquesta, nuestro barrio</div>
+          <div class="small text-uppercase fw-semibold mb-2" style="letter-spacing:.16em;color:rgba(255,255,255,.78)">Música en un club del barrio</div>
           <p class="mb-0">
-            Cada ensayo es una construcción colectiva. La orquesta se sostiene con el esfuerzo de chicos y chicas, el acompañamiento de las familias y el trabajo cotidiano de docentes y comunidad.
+            El Club Cárdenas forma parte de la memoria barrial de Mataderos. Llevar allí la música de la orquesta es también fortalecer el puente entre escuela, familia, clubes y comunidad.
           </p>
         </div>
       </div>
@@ -102,69 +108,73 @@
   </div>
 </header>
 <main>
-  <section id="ultimo-concierto" class="py-5">
+  <section id="proximo-concierto" class="py-5">
     <div class="container">
       <div class="row g-4 align-items-stretch">
-        <div class="col-xl-7 col-lg-7">
-          <span class="tag mb-2 d-inline-block">Último concierto</span>
+        <div class="col-xl-6 col-lg-6">
+          <span class="tag mb-2 d-inline-block">Próximo concierto</span>
           <div class="event-card h-100">
-            <div class="media-16x9">
-              <img src="./img/escuela19-2026-1-960.jpg" alt="Orquesta de Mataderos durante el concierto en la Escuela Nº 19 Eva Duarte" loading="lazy">
+            <div class="media-16x9 event-media-balanced">
+              <img src="./img/escuela19-2026-1-960.jpg" alt="Orquesta de Mataderos preparándose para el próximo concierto" loading="lazy">
             </div>
             <div class="body">
-              <h2 class="h3 fw-bold mb-3">Escuela Nº 19 Eva Duarte • Un concierto que quedó en la memoria de la escuela</h2>
+              <h2 class="h3 fw-bold mb-3">2 de mayo • Club Cárdenas de Mataderos</h2>
               <p>
-                La última presentación de la orquesta reunió a chicos y chicas, familias, docentes y vecinos en una jornada muy especial dentro de la <strong>Escuela Nº 19 D.E. 20 Eva Duarte</strong>. La música volvió a ocupar un lugar central en la vida de la escuela y del barrio, con los alumnos de la orquesta como protagonistas de un encuentro profundamente comunitario.
+                La orquesta vuelve a salir al encuentro del barrio con una nueva presentación en el <strong>Club Cárdenas</strong>, un espacio profundamente ligado a la vida social, deportiva y cultural de Mataderos, con una historia barrial que se remonta a 1932.
               </p>
               <p>
-                Para la orquesta tuvo además un valor muy propio: no fue tocar en cualquier escenario, sino hacerlo en <strong>la misma escuela donde ensaya, aprende y crece cada semana</strong>. Esa cercanía entre concierto, escuela y comunidad hizo que el momento se viviera con mucha pertenencia y emoción.
+                Este concierto será una oportunidad para que chicos y chicas compartan el trabajo que vienen construyendo en los ensayos junto a sus profes, con el acompañamiento de las familias y de toda la comunidad.
               </p>
               <p>
-                Ahora ese concierto ya forma parte del historial del sitio y puede recorrerse con nuevas fotos del evento, una crónica del día y accesos a los canales donde se seguirán anunciando próximas actividades.
+                El horario será confirmado próximamente. Mientras tanto, invitamos a guardar la fecha, compartir el sitio y seguir difundiendo la actividad de la orquesta para que más vecinos y vecinas puedan acercarse.
               </p>
-        <div class="row g-2 mt-1">
-  <div class="col-4">
-    <img src="./img/escuela19-2026-2-480.jpg"
-         class="gallery-thumb"
-         alt="Concierto orquesta vista general"
-         loading="lazy">
-  </div>
-
-  <div class="col-4">
-    <img src="./img/escuela19-2026-3-480.jpg"
-         class="gallery-thumb"
-         alt="Orquesta en escena"
-         loading="lazy">
-  </div>
-
-  <div class="col-4">
-    <img src="./img/escuela19-2026-4-480.jpg"
-         class="gallery-thumb"
-         alt="Público y comunidad"
-         loading="lazy">
-  </div>
-</div>
+              <div class="row g-2 mt-3 gallery-row">
+                <div class="col-4"><img src="./img/foto12-480.jpg" class="gallery-thumb" alt="Imagen de referencia de la orquesta" loading="lazy"></div>
+                <div class="col-4"><img src="./img/foto22-480.jpg" class="gallery-thumb" alt="Imagen de referencia de integrantes de la orquesta" loading="lazy"></div>
+                <div class="col-4"><img src="./img/escuela19-2026-4-480.jpg" class="gallery-thumb" alt="Imagen de referencia de concierto y comunidad" loading="lazy"></div>
+              </div>
+              <p class="small text-muted mt-2 mb-0">Imágenes de referencia del recorrido reciente de la orquesta.</p>
             </div>
           </div>
         </div>
-        <div class="col-xl-5 col-lg-5">
-          <div class="card-soft h-100 d-flex flex-column">
+        <div class="col-xl-6 col-lg-6">
+          <div class="card-soft h-100 d-flex flex-column event-side-card">
             <div class="d-flex align-items-center gap-2 mb-3">
-              <span class="icon-bullet">OK</span>
-              <h3 class="h5 fw-bold mb-0">Seguimos sumando al historial</h3>
+              <span class="icon-bullet">QR</span>
+              <h3 class="h5 fw-bold mb-0">Ubicación y difusión</h3>
             </div>
-            <p class="small mb-3">
-              El concierto de la Escuela Nº 19 Eva Duarte ya se encuentra incorporado a la sección de conciertos, junto con el resto del recorrido de la orquesta.
-            </p>
-            <ul class="list-unstyled small mb-4 schedule-list">
-              <li><strong>Fecha del evento:</strong> marzo de 2026</li>
-              <li><strong>Lugar:</strong> Escuela Nº 19 D.E. 20 Eva Duarte</li>
-              <li><strong>Dirección:</strong> Cosquín 3100, Mataderos</li>
-              
+            <p class="small mb-3">Escaneá el QR para abrir este sitio, compartir la invitación y ver desde acá la ubicación del Club Cárdenas.</p>
+            <div class="qr-map-grid mb-3">
+              <div class="text-center">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23proximo-concierto" class="qr-img" alt="QR del sitio de la Orquesta de Mataderos con información del concierto" loading="lazy">
+                <div class="small text-muted mt-2">QR del sitio</div>
+              </div>
+              <iframe
+                class="mini-map"
+                title="Ubicación del Club Cárdenas en Google Maps"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Av.%20Coronel%20C%C3%A1rdenas%202920%2C%20C1440EJU%2C%20Ciudad%20Aut%C3%B3noma%20de%20Buenos%20Aires&output=embed">
+              </iframe>
+            </div>
+            <ul class="list-unstyled small mb-3 schedule-list">
+              <li><strong>Fecha:</strong> 2 de mayo</li>
+              <li><strong>Horario:</strong> a confirmar</li>
+              <li><strong>Lugar:</strong> Club Cárdenas</li>
+              <li><strong>Dirección:</strong> Av. Coronel Cárdenas 2920, C1440EJU, CABA</li>
             </ul>
-            <div class="d-grid gap-2 mt-auto">
-              <a href="concierto_escuela19_eva_duarte_2026.html" class="btn btn-brand">Abrir registro del concierto</a>
-              <a href="conciertos.html" class="btn btn-outline-secondary">Ver todos los conciertos</a>
+            <div class="share-actions mb-3">
+              <a href="https://wa.me/?text=Pr%C3%B3ximo%20concierto%20de%20la%20Orquesta%20Infantil%20y%20Juvenil%20de%20Mataderos.%202%20de%20mayo%20en%20el%20Club%20C%C3%A1rdenas.%20La%20ubicaci%C3%B3n%20y%20la%20informaci%C3%B3n%20actualizada%20est%C3%A1n%20en%20el%20sitio%3A%20https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23proximo-concierto" target="_blank" rel="noopener" class="btn btn-brand btn-sm">WhatsApp</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Club%20C%C3%A1rdenas%20Av.%20Coronel%20C%C3%A1rdenas%202920%20C1440EJU%20Ciudad%20Aut%C3%B3noma%20de%20Buenos%20Aires" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">Google Maps</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23proximo-concierto" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">Facebook</a>
+              <a href="https://t.me/share/url?url=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23proximo-concierto&text=Pr%C3%B3ximo%20concierto%20de%20la%20Orquesta%20de%20Mataderos%3A%202%20de%20mayo%20en%20Club%20C%C3%A1rdenas" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">Telegram</a>
+              <a href="https://twitter.com/intent/tweet?text=Pr%C3%B3ximo%20concierto%20de%20la%20Orquesta%20de%20Mataderos%3A%202%20de%20mayo%20en%20Club%20C%C3%A1rdenas&url=https%3A%2F%2Forquestademataderos.github.io%2Forquestamataderos%2F%23proximo-concierto" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">X / Twitter</a>
+              <button class="btn btn-outline-secondary btn-sm" type="button" onclick="navigator.clipboard.writeText('Próximo concierto de la Orquesta Infantil y Juvenil de Mataderos. 2 de mayo en el Club Cárdenas. Horario a confirmar. Toda la información, ubicación y difusión están en el sitio: https://orquestademataderos.github.io/orquestamataderos/#proximo-concierto')">Copiar texto</button>
+            </div>
+            <div class="concert-mini-timeline mt-auto">
+              <div class="item"><strong>2 de mayo</strong><br><span class="small">Próximo concierto en Club Cárdenas.</span></div>
+              <div class="item"><strong>16 de marzo</strong><br><span class="small">Concierto en Escuela Nº 19 Eva Duarte.</span></div>
+              <div class="item"><strong>Historial</strong><br><span class="small">Polideportivo Nueva Chicago, Teatro El Plata y otros encuentros de la orquesta.</span></div>
             </div>
           </div>
         </div>
@@ -179,7 +189,7 @@
             <span class="tag mb-2">Ensayos semanales</span>
             <h2 class="h4 fw-bold mb-3">La actividad sigue cada semana</h2>
             <p>
-              Aunque todavía no hay nuevas fechas públicas confirmadas, la orquesta <strong>sigue activa y ensayando</strong>. Los chicos y chicas continúan trabajando repertorio, técnica, escucha grupal y preparación musical junto a sus profes.
+              Con el próximo concierto ya anunciado, la orquesta <strong>sigue activa y ensayando</strong>. Los chicos y chicas continúan trabajando repertorio, técnica, escucha grupal y preparación musical junto a sus profes.
             </p>
             <div class="quote-box my-3">
               <p class="mb-1"><strong>Escuela Nº 19 Eva Duarte — Los Perales, Mataderos</strong></p>
@@ -195,11 +205,11 @@
         <div class="col-lg-6">
           <div class="card-soft h-100">
             <span class="tag mb-2">Próximamente</span>
-            <h2 class="h4 fw-bold mb-3">Las nuevas fechas se anunciarán por estos canales</h2>
+            <h2 class="h4 fw-bold mb-3">El concierto y las novedades se anunciarán por estos canales</h2>
             <div class="timeline">
               <div class="timeline-item">
                 <h3 class="h6 fw-bold mb-1">Instagram</h3>
-                <p class="small mb-0">Novedades rápidas, registros del día a día y avisos de conciertos, encuentros y actividades.</p>
+                <p class="small mb-0">Novedades rápidas, placas de difusión, registros del día a día y avisos del concierto del 2 de mayo.</p>
               </div>
               <div class="timeline-item">
                 <h3 class="h6 fw-bold mb-1">YouTube</h3>
@@ -240,7 +250,7 @@
             A su alrededor hay una red que acompaña: familias, docentes, auxiliares, escuela, barrio y comunidad. Ese entramado es el que hace posible que la orquesta no sea solo una actividad, sino una experiencia de pertenencia y crecimiento.
           </p>
           <p class="mb-0">
-            Por eso este sitio sigue activo aun cuando no haya fechas nuevas definidas: porque el trabajo continúa y porque cada ensayo también forma parte de la historia de la orquesta.
+            Por eso este sitio sigue activo entre cada presentación: porque el trabajo continúa y porque cada ensayo también forma parte de la historia de la orquesta.
           </p>
         </div>
       </div>
@@ -291,7 +301,7 @@
           La orquesta continúa creciendo gracias a un esfuerzo compartido que vale la pena sostener. Lo que los profes y los chicos construyen cada semana necesita del acompañamiento de toda la comunidad.
         </p>
         <p class="mb-0">
-          Seguimos ensayando, aprendiendo y preparando lo que viene. Y cuando haya nuevas fechas, este sitio y sus canales las van a anunciar.
+          Seguimos ensayando, aprendiendo y preparando lo que viene. La próxima cita será el 2 de mayo en el Club Cárdenas, y este sitio seguirá actualizando la información a medida que se confirme el horario y los nuevos detalles.
         </p>
       </div>
     </div>
